@@ -1,26 +1,26 @@
 #CUADERNO DE C y C++
 Lenguaje multiplataforma, compilado y de propósito general, lo usaría para hacer API potentes de consola porque apps con interfaz prefiero Java + FX <br><br>
 
-**Índice** <br><br>
-1. Entornos de desarrollo <br><br>
-2. Hola mundo <br><br>
-3. Variables y constantes <br><br>
-4. Operadores <br><br>
-5. Punteros y referencias <br><br>
-6. Entrada y salida estándar <br><br>
-7. Control del flujo <br><br>
-8. Arrays <br><br>
-9. Cadenas <br><br>
-10. Estructuras <br><br>
-11. Funciones <br><br>
-12. Ficheros en C y C++ <br><br>
-13. Estructuras dinámicas <br><br>
-14. POO <br><br>
-15. Técnicas de programación <br><br>
-16. Algoritmos de ordenación y búsqueda <br><br>
-17. Control de errores y validación de datos <br><br>
+**Índice** <br>
+1. Entornos de desarrollo 
+2. Hola mundo <br>
+3. Variables y constantes <br>
+4. Operadores <br>
+5. Punteros y referencias <br>
+6. Entrada y salida estándar <br>
+7. Control del flujo <br>
+8. Arrays <br>
+9. Cadenas <br>
+10. Estructuras <br>
+11. Funciones <br>
+12. Ficheros en C y C++ <br>
+13. Estructuras dinámicas <br>
+14. POO <br>
+15. Técnicas de programación <br>
+16. Algoritmos de ordenación y búsqueda <br>
+17. Control de errores y validación de datos <br>
 
-<br><br>
+<br>
 
 ## 1 - Entornos de desarrollo
 A día de hoy uso el entorno CodeBlocks aunque probablemente me cambie a otro más bonito en apariencia por ejemplo SublimeText o Atom.
