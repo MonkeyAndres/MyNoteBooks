@@ -2,7 +2,7 @@
 Lenguaje multiplataforma, compilado y de propósito general, lo usaría para hacer API potentes de consola porque apps con interfaz prefiero Java + FX <br><br>
 
 **Índice** <br>
-1. Entornos de desarrollo 
+1. Entornos de desarrollo <br>
 2. Hola mundo <br>
 3. Variables y constantes <br>
 4. Operadores <br>
