@@ -1,24 +1,24 @@
 #CUADERNO DE C y C++
-Lenguaje multiplataforma, compilado y de propósito general, lo usaría para hacer API potentes de consola porque apps con interfaz prefiero Java + FX
+Lenguaje multiplataforma, compilado y de propósito general, lo usaría para hacer API potentes de consola porque apps con interfaz prefiero Java + FX <br><br>
 
-**Índice**
-1. Entornos de desarrollo
-2. Hola mundo
-3. Variables y constantes
-4. Operadores
-5. Punteros y referencias
-6. Entrada y salida estándar
-7. Control del flujo
-8. Arrays
-9. Cadenas
-10. Estructuras
-11. Funciones
-12. Ficheros en C y C++
-13. Estructuras dinámicas
-14. POO
-15. Técnicas de programación
-16. Algoritmos de ordenación y búsqueda
-17. Control de errores y validación de datos
+**Índice** <br><br>
+1. Entornos de desarrollo <br><br>
+2. Hola mundo <br><br>
+3. Variables y constantes <br><br>
+4. Operadores <br><br>
+5. Punteros y referencias <br><br>
+6. Entrada y salida estándar <br><br>
+7. Control del flujo <br><br>
+8. Arrays <br><br>
+9. Cadenas <br><br>
+10. Estructuras <br><br>
+11. Funciones <br><br>
+12. Ficheros en C y C++ <br><br>
+13. Estructuras dinámicas <br><br>
+14. POO <br><br>
+15. Técnicas de programación <br><br>
+16. Algoritmos de ordenación y búsqueda <br><br>
+17. Control de errores y validación de datos <br><br>
 
 <br><br>
 
