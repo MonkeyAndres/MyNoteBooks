@@ -1,4 +1,6 @@
 # MyNoteBooks
 Un repositorio con mis cuadernos de programación.
 
-> Esto es posible usando Angular2 y ShowdownJS
+##Cuadernos
+* C y C++ (WIP)
+* Java (WIP)
