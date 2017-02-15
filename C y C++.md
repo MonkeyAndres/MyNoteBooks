@@ -29,7 +29,7 @@ A día de hoy uso el entorno CodeBlocks aunque probablemente me cambie a otro m�
 Un **hola mundo** convencional en C tiene el siguiente formato:
 
 ```c
-include <stdio.h>
+#include <stdio.h>
 
 /* Función principal */
 int main (int argc,char **argv)
@@ -43,7 +43,7 @@ int main (int argc,char **argv)
 Mientras que en C++ se veria como el siguiente:
 
 ```c++
-include <iostream>
+#include <iostream>
 
 using namespace std;
 
@@ -131,7 +131,7 @@ Funciones:
 ## 7 - Control de flujo
 Las principales estructuras de control de flujo son: if-else, for, while, do-while, switch.
 ```c++
-include <iostream>
+#include <iostream>
 using namespace std;
 
 int main(void){
@@ -173,3 +173,65 @@ int main(void){
 ```
 
 ## 8 - Arrays
+Existen dos tipos de arrays, unidireccionales y bidireccionales. Todos los elementos dentro de un array deben ser del mismo tipo.
+
+```c++
+#include <iostream>
+using namespace std;
+
+int main(){
+  //Definicion de un array unidireccional (definir tamaño)
+  int miArray[10] = {10,1,1,1,1,1,1,1};
+  
+  //Definicion de array bidireccional (filas, columnas)
+  int arrayBidireccional[3][3] = {
+    0,1,0, //Ojo coma al final
+    0,0,1,
+    1,1,1
+  };
+  
+  return 0;
+}
+```
+
+## 9 - Cadenas
+Se declaran como si fueran un array de caracteres. Siempre tienes que poner un caracter de mas ya que el ultimo hueco del array se completa con '\0'. En C añadir < string.h >
+
+Funciones:
+* gets(variable) = Recoje cadenas con espacios incluidos
+* printf("%s", &variable) = Imprime una cadena
+* strcat(destino, origen) = Copia la cadena del segundo parametro a continuacion de la primera
+* strlen(cadena) = Indica el tamaño de la cadena
+* strstr(cadena1, cadena2) = Buscar la cadena dos dentro de la primera
+* strlwr(cadena) = Convierte una cadena a minusculas
+* strupr(cadena) = Convierte una cadena a mayusculas
+* atoi(cadena) = Convierte una cadena a int
+
+```c
+//Funcion strtok()
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+  //Declaramos un puntero y una cadena
+  char cadena[100] = "platano, manzana, pera";
+  char *cachos;
+  
+  //Definimos el puntero
+  p = strtok(cadena, ",");
+  
+  //Comprobamos si hay fragmentos
+  if(p){
+    printf("\n%s", p);
+  }
+  
+  //Seguimos comprobando mas fragmentos (OJO NULL)
+  while(p = strtok(NULL, ",")){
+    printf("\n%s", p);
+  }
+  
+  return 0;
+}
+```
+
+## 10 - Estructuras
