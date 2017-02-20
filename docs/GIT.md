@@ -1,4 +1,4 @@
-#GIT
+# GIT
 Cuaderno de referencia rapida sobre git. No recomendable usar como guia de inicio. <br>
 
 ## Vocabulario
