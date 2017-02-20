@@ -35,6 +35,3 @@ function obtenerCuaderno(ctx){
 	xhr.open('GET', file);
 	xhr.send();
 }
-
-obtenerCuaderno();
-

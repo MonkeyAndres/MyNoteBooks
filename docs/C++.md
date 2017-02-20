@@ -1,4 +1,4 @@
-#CUADERNO DE C y C++
+# CUADERNO DE C y C++
 Lenguaje multiplataforma, compilado y de propósito general, lo usaría para hacer API potentes de consola porque apps con interfaz prefiero Java + FX <br><br>
 
 **Índice** <br>
