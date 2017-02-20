@@ -53,6 +53,9 @@ hr{height: 1px; background-color: rgba(0,0,0,.15); margin-bottom: 1em; margin-to
 	opacity: 1;
 }
 
+body>a{margin: auto;}
+#header>a{color: #333;}
+
 @media screen and (max-width: 600px) {
 	#contenedor>div>article{
 		width: 30%;
