@@ -1,5 +1,5 @@
-page('/', index);
-page('/mensaje', obtenerCuaderno);
+page('/MyNoteBooks', index);
+page('/MyNoteBooks/mensaje', obtenerCuaderno);
 page();
 
 function index(){
