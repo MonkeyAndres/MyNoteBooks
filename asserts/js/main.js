@@ -7,6 +7,8 @@ function index(){
 }
 
 function obtenerCuaderno(ctx){
+	$('.contenedor').addClass('markdown-body');
+	
 	var file = file || "docs/"+ctx.params.lenguaje+".md";
 	var reader = new stmd.DocParser();
 	var writer = new stmd.HtmlRenderer();
@@ -34,6 +36,8 @@ function obtenerCuaderno(ctx){
 
 	xhr.open('GET', file);
 	xhr.send();
-	
-	$('.contenedor').addClass('markdown-body');
 }
+
+$('.return').click(function(){
+	location.href="/MyNoteBooks";
+});
