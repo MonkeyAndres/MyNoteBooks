@@ -42,3 +42,7 @@ $('.return').click(function(event){
 	event.preventDefault();
 	location.href="/MyNoteBooks";
 });
+
+$('document').ready(function(){
+	hljs.initHighlightingOnLoad();
+});
