@@ -3,6 +3,7 @@ page('/MyNoteBooks/:lenguaje', obtenerCuaderno);
 page();
 
 function index(){
+	location.reload();
 	$('#contenedor').load('includes/main.html');
 }
 
@@ -34,4 +35,6 @@ function obtenerCuaderno(ctx){
 
 	xhr.open('GET', file);
 	xhr.send();
+	
+	$('.contenedor').addClass('markdown-body');
 }
