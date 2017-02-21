@@ -71,6 +71,7 @@ hr{height: 1px; background-color: rgba(0,0,0,.15); margin-bottom: 1em; margin-to
 
 body>a{margin: auto; display: block; font-size: 15px; text-align: center; margin: 1.5em}
 #header>a{color: inherit;}
+#contenedor>h2{color: #333}
 
 @media screen and (max-width: 600px) {
 	#contenedor>div>article{
