@@ -57,7 +57,7 @@ int main (int argc,char **argv)
 ```
 
 ## 3 - Variables y constantes
-En C y C++ existe varios **tipos de datos** que se deben poner al definir una variable.
+En C y C++ existe varios **tipos de datos** que se deben poner al definir una variable. <br>
 Tipos de datos:
 ```c++
 * INT = 1
@@ -67,7 +67,7 @@ Tipos de datos:
 * VOID = no valor
 * BOOL (solo C++) = true
 ```
-A el tipo INT se le puede añadir short o long al principio.
+A el tipo INT se le puede añadir short o long al principio.<br>
 **Sintaxis de variables:** `tipo identificador, identificador;`
 
 Las constates se definen de dos maneras ambas se colocan después de include: 
@@ -78,7 +78,7 @@ Las constates se definen de dos maneras ambas se colocan después de include:
 Son los mismos que en JS
 
 ## 5 - Punteros y Referencias
-**Puntero**: ubicacion del trozo de memoria que guarda una variable.
+**Puntero**: ubicacion del trozo de memoria que guarda una variable. <br>
 
 Ejemplo Puntero:
 ```c++
@@ -94,10 +94,10 @@ int main(void){
 }
 ```
 
-Operadores de puntero:
-* **miPuntero** = Retorna la ubicacion de la variable a la que apunta
-* **&miPuntero** = Retorna la ubicacion del puntero
-* ***miPuntero** = Retorna el valor de la variable a la que apunta
+**Operadores de puntero:**
+* miPuntero = Retorna la ubicacion de la variable a la que apunta
+* &miPuntero = Retorna la ubicacion del puntero
+* *miPuntero = Retorna el valor de la variable a la que apunta
 
 ## 6 - Entrada y salida estandar
 La divido en dos partes, primero C y despues C++
@@ -118,7 +118,7 @@ int main(void){
 }
 ```
 
-Funciones: 
+**Funciones:** 
 * getchar() = Recoje un caracter ingresado por teclado
 * printf("%d", 10) = Imprime el texto entre ""
 * scanf("%d", &entero) = Recoje caracteres del teclado y los almacena en la variable
@@ -197,7 +197,7 @@ int main(){
 ## 9 - Cadenas
 Se declaran como si fueran un array de caracteres. Siempre tienes que poner un caracter de mas ya que el ultimo hueco del array se completa con '\0'. En C añadir < string.h >
 
-Funciones:
+**Funciones:**
 * gets(variable) = Recoje cadenas con espacios incluidos
 * printf("%s", &variable) = Imprime una cadena
 * strcat(destino, origen) = Copia la cadena del segundo parametro a continuacion de la primera
@@ -235,4 +235,22 @@ int main(){
 ```
 
 ## 10 - Estructuras
-Son arrays que pueden almacenar diferentes tipos de datos.
+Son arrays que pueden almacenar diferentes tipos de datos. <br>
+**Concepto:** Es como cuando defines el modelo de una db. Como un tipo de dato. <br>
+**Consejo:** Empezar las estructuras con tipoNombre.<br>
+```c++
+/* Aqui includes y constantes */
+
+//Se define la estructura
+struct tipoLibro{
+  int paginas;
+  char autor[100];
+}
+
+int main(void){
+  //La variable no se declara
+  struct tipoLibro variable;
+  variable.paginas = 100;
+  variable.autor = "Yo";
+}
+```
