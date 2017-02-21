@@ -3,7 +3,6 @@ page('/MyNoteBooks/:lenguaje', obtenerCuaderno);
 page();
 
 function index(){
-	location.reload();
 	$('#contenedor').load('includes/main.html');
 }
 
