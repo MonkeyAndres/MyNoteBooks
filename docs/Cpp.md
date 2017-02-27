@@ -287,7 +287,7 @@ void incrementar (int *n){
 ```
 
 ## 12 - Ficheros en C y C++
-####Ficheros en C
+#### Ficheros en C
 ```c
 FILE *archivo;
 
