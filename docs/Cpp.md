@@ -320,7 +320,7 @@ fwrite(direccion_dato, tamanio, veces, archivo);
 fread(direccion_dato, tamanio, veces, archivo);
 ```
 
-####Ficheros en C++
+#### Ficheros en C++
 Para manejar ficheros en C++ necesitamos llamar una biblioteca especial, hay dos tipos de variable de archivo uno que crea (ofstream)  y otro que solo abre (ifstream).
 ```c++
 //
