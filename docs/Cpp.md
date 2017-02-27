@@ -254,3 +254,165 @@ int main(void){
   variable.autor = "Yo";
 }
 ```
+
+## 11 - Funciones
+Son piezas individuales de codigo reusables y con argumentos.
+```c++
+//Includes
+
+//OJO A ESTO
+void hola(char mensaje);
+
+//Funcion main
+void hola(char mensaje){
+  cout<< mensaje <<endl;
+  
+  //Si tiene valor de retorno se cambia el void
+}
+```
+Para acceder a una variable desde una funcion se usan punteros o referencias.
+```c++
+void incrementar (int *n);
+
+int main (void){
+  int numero = 1;
+  
+  //Ojo con el &
+  incrementar(&numero);
+}
+
+void incrementar (int *n){
+  *n = *n + 1;
+}
+```
+
+## 12 - Ficheros en C y C++
+####Ficheros en C
+```c
+FILE *archivo;
+
+//Abrir un fichero
+archivo = fopen("db.txt", modo);
+
+/* Modos de abrir un archivo (aniadir t al final para txt)
+r = read
+a = append
+r+ = leer y modificar
+w+ = crea y lee
+*/
+
+//Cerrar el archivo
+fclose(archivo);
+
+//Escribir en un fichero
+fputs("Hola mundo", archivo);
+
+//Leer un caracter
+fgetc(archivo);
+
+//Ver si se ha llegado al final del archivo (while con anterior)
+feof(archivo);
+
+//Escribir en archivo
+fwrite(direccion_dato, tamanio, veces, archivo);
+
+//Leer cualquier cosa
+fread(direccion_dato, tamanio, veces, archivo);
+```
+
+####Ficheros en C++
+Para manejar ficheros en C++ necesitamos llamar una biblioteca especial, hay dos tipos de variable de archivo uno que crea (ofstream)  y otro que solo abre (ifstream).
+```c++
+//
+
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main(void){
+  //Creamos variable fichero
+  ifstream miArchivo;
+  miArchivo.open(archivo, modo);
+  
+  /* Modos Abrir Archivo
+  ios::app = Añade datos al final del archivo
+  ios::in = Lee datos, por defecto ifstream
+  ios::out = Escribe datos, por defecto ofstream
+  ios::binary = Abrir modo binario
+  ios::ate = Coloca un apuntador del fichero al final del mismo
+  ios::nocreate = Si el archivo no existe no abre
+  ios::noreplace = No remplaza archivo
+  ios::trunc = Sobreescribe el archivo
+  */
+  
+  //Escribir datos en un archivo
+  miArchivo << "Hola mundo"; 
+  
+  //Detectar el final archivo (en un while)
+  miArchivo.eof();
+  
+  //Leer cadenas archivo
+  miArchivo >> cadena;
+  cout << cadena;
+}
+```
+Ahora un ejemplo de persistencia de estructuras en archivos .dat
+```c++
+//Base de datos Twitter
+
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+//Defino estructura
+struct tipoUser {
+  char nombre[30];
+  char username[10];
+};
+
+int main(void){
+  //Asigna variable a la estructura
+  struct tipoUser usuario;
+  
+  //Crea variable archivo
+  ofstream db;
+  //Abro el archivo en modo binario
+  db.open("db.dat", ios::out | ios::binary);
+  
+  if(!db){
+    cout << "No se ha podido crear el fichero";
+  } else {
+    //Pedimos tres usuarios
+    for (int i=0; i<=3; i++){
+      cout << "Escriba su nombre >> ";
+      cin << usuario.nombre;
+      cout << "Escriba su usuario >> ";
+      cin << usuario.username;
+      
+      //Añadimos el nombre al fichero || sizeof() = Indica tamaño
+      db.write((char *) &usuario, sizeof(usuario));
+    }
+    //Cierro fichero
+    db.close();
+  }
+}
+```
+Para leer los datos anteriormente metidos en db.dat
+```c++
+//Abrimos fichero modo lectura binario
+db.open("db.dat", ios::in | ios::binary);
+
+//Leemos todo ojo sizeof()
+db.read((char *) $usuario, sizeof(struct tipoUser));
+
+//Bucle hasta final archivo
+while(db.eof()){
+  //Imprimimos resultados
+  cout << "Nombre = " << usuario.nombre << endl;
+  cout << "Usuario = " << usuario.username << endl;
+  
+  //Volvemos a leer otro registro
+  db.read((char *) $usuario, sizeof(struct tipoUser));
+}
+```
+Mirar uso de seekp y seekg.
