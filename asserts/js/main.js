@@ -43,8 +43,10 @@ $('.return').click(function(event){
 	location.href="/MyNoteBooks";
 });
 
-$(document).ready(function() {
-  $('pre code').each(function(i, block) {
-    hljs.highlightBlock(block);
-  });
+$(document).ready(function(){
+	index();
+	$('pre code').each(function(i, block) {
+		hljs.highlightBlock(block);
+	});
 });
+
