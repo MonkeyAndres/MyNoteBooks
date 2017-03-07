@@ -34,6 +34,9 @@ function obtenerCuaderno(ctx){
 		}
 	}
 
+	hljs.initHighlighting.called = false;
+	hljs.initHighlighting();
+	
 	xhr.open('GET', file);
 	xhr.send();
 }
