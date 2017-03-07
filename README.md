@@ -7,4 +7,4 @@ Un repositorio con mis cuadernos de programación y otros temas frikis :D
 - [ ] Java 8 (WIP)
 
 ## ToDo
-- [ ] Fix highlight
+All done :D
