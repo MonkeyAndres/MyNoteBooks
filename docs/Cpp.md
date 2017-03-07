@@ -416,3 +416,86 @@ while(db.eof()){
 }
 ```
 Mirar uso de seekp y seekg.
+
+## 13 - Estructuras dinamicas
+Es una forma de crear "arrays" con un tamaño dinamico, es decir, se adaptan a datos nuevos. <br>
+Esto se consigue reservando memoria y liberandola, ver siguiente ejemplo.
+
+```c++
+#include <iostream>
+#include <stdlib.h> //Libreria requerida para reservar memoria
+
+//Creamos la estructura nodo
+struct nodo{
+  int ip; //Definimos datos del nodo
+  
+  //Definimos un puntero que apunta a el siguiente elemento
+  struct nodo *siguiente; 
+}
+
+//Definimos un tipo de dato tipoNodo
+typedef struct nodo *tipoNodo;
+
+//Funciones
+void insertarInicio(tipoNodo &miNodo, int valor);
+void insertarFinal(tipoNodo &miNodo, int valor);
+tipoNodo buscarNodo(tipoNodo &miNodo, int valor);
+
+//Funcion principal
+int main(void){
+  tipoNodo miNodo = NULL; //Igualamos el nodo principal a NULL
+  tipoNodo resultado;
+  int valor;
+
+  insertarInicio(miNodo, valor);
+  insertarFinal(miNodo, valor);
+  
+  resultado = buscarNodo(miNodo, valor);
+}
+
+void insertarInicio(tipoNodo &miNodo, int valor){
+  tipoNodo nd; //Definicion variable tipoNodo
+  nd = new(struct nodo); //Asignamos espacio dinamico a la variable nd
+  
+  //Decimos que el ip es igual a valor, se accede a ip con "->"
+  nd->ip = valor; 
+  nd->siguiente = miNodo; //Siguiente = miNodo pasado por parametro
+  miNodo = nd; //Hago que miNodo valga el nuevo nodo nd
+}
+
+void insertarFinal(tipoNodo &miNodo, int valor){
+  tipoNodo nd1, nd2 = new(struct nodo); //Creo dos variables una dinamica
+  
+  //Relleno los datos de el nodo
+  nd2->ip = valor;
+  nd2->siguiente = null; //Para que e¡sea el ultimo
+  
+  //Si es el unico nodo ponlo el primero
+  if(miNodo == NULL) miNodo = nd2;
+  
+  else
+  	nd1 = miNodo;
+  	
+  	//Mientras el nodo no tenga siguiente se cambia de nodo
+  	while(nd1->siguiente != NULL){
+  	  //Cambio a el parametro siguiente del siguiente nodo
+      nd1 = nd1->siguiente; 
+  	}
+  	nd1->siguiente = nd2;
+}
+
+tipoNodo buscarNodo(tipoNodo &miNodo, int valor){
+  tipoNodo nd = miNodo;
+  
+  /*
+  Mientras el parametro siguiente del nodo no sea null
+  se verifica si el apartado ip es igual al valor,
+  si es asi se retorna el nodo nd.
+  */
+  while(nd1->siguiente != NULL){
+    if(nd->ip == valor) return nd;
+    else
+      nd = nd->siguiente;
+  }
+}
+```
