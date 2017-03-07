@@ -418,7 +418,7 @@ while(db.eof()){
 Mirar uso de seekp y seekg.
 
 ## 13 - Estructuras dinamicas
-Es una forma de crear "arrays" con un tamaño dinamico, es decir, se adaptan a datos nuevos. <br>
+Es una forma de crear "arrays" con un tamaño dinamico, es decir, se adaptan a datos nuevos. Es importante eliminarlos al final con `delete();` <br>
 Esto se consigue reservando memoria y liberandola, ver siguiente ejemplo.
 
 ```c++
