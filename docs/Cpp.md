@@ -17,8 +17,7 @@ Lenguaje multiplataforma, compilado y de propósito general, lo usaría para hac
 13. Estructuras dinámicas <br>
 14. POO <br>
 15. Técnicas de programación <br>
-16. Algoritmos de ordenación y búsqueda <br>
-17. Control de errores y validación de datos <br>
+16. Frameworks <br>
 
 <br>
 
@@ -499,3 +498,71 @@ tipoNodo buscarNodo(tipoNodo &miNodo, int valor){
   }
 }
 ```
+
+## 14 - POO
+La programacion orientada a objetos (POO) es una tecnica de programacion en la que se programan clases que son como el molde de un objeto y luego este molde se instancia y se crea el objeto. <br>
+Un objeto puede tener atributos (variables), metodos (funciones) y un constructor (funcion que se ejecuta al instanciar la clase) <br>
+Ejemplo de clase: 
+```c++
+/*
+Declaracion de la clase (molde)
+Los metodos suelen ser privados y los metodos publicos
+*/
+
+class radio{
+  private:
+  	int frecuencia;
+  	int volumen;
+  public:
+  	void subirVolumen();
+  	void bajarVolumen();
+  	void cambiarFrecuencia(int valor);
+}
+
+//Declaro los metodos
+void radio::subirVolumen(){volumen++;}
+void radio::bajarVolumen(){volumen--;}
+void radio::cambiarFrecuencia(int valor){frecuencia = valor;}
+
+//Instancio clase
+radio miRadio;
+```
+En las clases tambien se puede trabajar con punteros:
+```c++
+radio *miRadio = new radio; //Crear objeto con puntero
+miRadio->subirVolumen(); //Acceso a metodos con ->
+delete miRadio; //Eliminar memoria
+```
+En C++ existen tanto constructores como destructores, los constructores de usan para inicializar los atributos de la clase y los destructores para liberar la memoria en caso de usar punteros. Estos se definen sin tipo.
+```c++
+class radio{
+  private:
+  	int frecuencia;
+  	int volumen;
+  public:
+  	void subirVolumen();
+  	void bajarVolumen();
+  	void cambiarFrecuencia(int valor);
+  	
+  	radio(); //Contructor
+  	~radio(); //Destructor
+}
+```
+Ademas de esto C++ dispone de soporte para la sobrecarga de metodos, es decir, se pueden declarar metodos con el mismo identificador pero distintos parametros y C++ escogera el mas adecuado. <br>
+C++ tambien tiene una de las principales funciones de la POO, la herencia de clases, esta se define de la siguiente manera:
+```c++
+class persona{}
+class desarrollador : public persona {};
+```
+
+Investigar Polimorfismo :P
+
+## 15 - Técnicas de programación
+Existen 4 principales tecnicas de programacion: Convencional, Estructurada, Modular, POO.
+* Convencional: busca que el programa funcione, consigue esto con un pegote de codigo ilegible. No recomendada
+* Estructurada: hace uso de estructuras de control, se prohibe el uso de "goto"
+* Modular: divide y venceras. Divide el programa en pequeños programas, obligatorio un modulo principal.
+* POO: es muy intuitiva consiste en la creacion de objetos como los naturales en el mundo, un ordenador, una pelota, un perro etc.
+
+## 16 - Frameworks
+Coming soon :D
