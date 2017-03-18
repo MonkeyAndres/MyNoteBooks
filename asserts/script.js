@@ -28,3 +28,12 @@ menu.onclick = function(){
     else {elem.style.left = "-300px"}
   }
 }
+
+//Inicio highlight.pack.js
+window.onload = startHighlight();
+window.onhaschange = startHighlight();
+
+function startHighlight() {
+  hljs.initHighlighting.called = false;
+  hljs.initHighlighting();
+}

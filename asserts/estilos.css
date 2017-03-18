@@ -50,6 +50,8 @@ header>span{
   font-weight: bold;
 }
 
+header>span>a{color: #fafafa;}
+
 .flex-container{
   display: flex;
   min-height: 100vh;
@@ -69,7 +71,7 @@ main>.container{
   background-color: #fafafa;
   padding: 1em;
 
-  position: relative;
+  position: absolute;
   top: 30px;
   margin-left:auto;
   margin-right:auto;
