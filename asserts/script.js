@@ -15,7 +15,7 @@ for (var i = 0; i < accordion.length; i++) {
 }
 
 //Animacion del sidebar
-let menu = document.querySelector(".mdi-menu");
+let menu = document.querySelector(".material-icons");
 
 menu.onclick = function(){
   if(window.innerWidth <= 865){
