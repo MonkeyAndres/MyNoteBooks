@@ -11,6 +11,6 @@ Please follow me on my twitter: [@MonkeyDAndres](https://twitter.com/MonkeyDAndr
 
 You can see the source of this project in [Source](https://github.com/MonkeyAndres/MyNoteBooks) <br>
 
-<div style="width: 200px">![BMO Dancing]({{ site.github.url }}/asserts/jakedance.gif)</div>
+<div style="width: 200px"><img src="{{ site.github.url }}/asserts/jakedance.gif"></div>
 <br>
 I hope you enjoy my notebooks :D
