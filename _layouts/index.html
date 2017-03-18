@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="http://cdn.materialdesignicons.com/1.8.36/css/materialdesignicons.min.css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-  <link rel="stylesheet" href="{{ "/assets/estilos.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ site.github.url }}/asserts/estilos.css">
 
   <title>NoteBooks!</title>
 </head>
@@ -29,7 +29,7 @@
 
       <div>
         {% for post in site.categories[category_name] %} <!-- NOTE: Compruebo la categoria en todos los post -->
-        <a href="{{post.url}}">{{post.title}}</a>
+        <a href="{{ site.github.url }}{{post.url}}">{{post.title}}</a>
         {% endfor %}
       </div>
       {% endfor %}
@@ -41,6 +41,6 @@
     </main>
   </div>
 
-  <script src="{{ "/assets/script.js" | relative_url }}"></script>
+  <script src="{{ site.github.url }}/asserts/script.js"></script>
 </body>
 </html>

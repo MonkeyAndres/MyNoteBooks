@@ -16,7 +16,7 @@
 title: MyNoteBooks
 email: monkeyandres@yahoo.com
 description: Website with all my notebooks.
-baseurl: "/MyNoteBooks" # the subpath of your site, e.g. /blog
+baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: MonkeyDAndres
 github_username:  MonkeyAndres
