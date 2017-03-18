@@ -39,6 +39,7 @@ header>i{
   width: 10%;
   text-align: right;
   cursor: pointer;
+  font-size: 24px;
 }
 
 header>span{
@@ -137,5 +138,5 @@ aside>div>a:hover{
     width: 300px
   }
   main{width: 100%}
-  main.container{width: 95%}
+  main>.container{width: 95%}
 }
