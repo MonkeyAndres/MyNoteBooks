@@ -1,3 +1,9 @@
+---
+layout: index
+title: Git & Github
+categories: Development
+---
+
 # GIT
 Cuaderno de referencia rapida sobre git. No recomendable usar como guia de inicio. <br>
 
@@ -27,7 +33,7 @@ Cuaderno de referencia rapida sobre git. No recomendable usar como guia de inici
   * -b (crear y cambiar)
 * Merge *< branch >* (mezcla la rama actual con *< branch >*)
 <br>
-  
+
 ## Flujo de trabajo
 * Iniciar git
 * Hacer pull

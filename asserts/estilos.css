@@ -1,0 +1,139 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  line-height: 1.5;
+  font-family: 'Ubuntu';
+}
+
+html{overflow: hidden;}
+
+img{width: 100%; height: auto;}
+
+hr{
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, .15);
+  display: block;
+  margin-bottom: 0.8em;
+}
+
+header{
+  background-color: #4caf50;
+  height: 60px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,.26);
+
+  position: relative;
+  z-index: 500;
+}
+
+header>i{
+  color: #fafafa;
+  display: block;
+  width: 10%;
+  text-align: right;
+  cursor: pointer;
+}
+
+header>span{
+  font-size: 25px;
+  color: #fafafa;
+  display: block;
+  width: 90%;
+  text-align: center;
+  font-weight: bold;
+}
+
+.flex-container{
+  display: flex;
+  min-height: 100vh;
+}
+
+main{
+  width: 80%;
+  background-color: #eee;
+  position: relative;
+  z-index: 0;
+}
+
+main>.container{
+  width: 85%;
+  max-width: 800px;
+  max-height: 85%;
+  background-color: #fafafa;
+  padding: 1em;
+
+  position: relative;
+  top: 3%;
+  margin-left:auto;
+  margin-right:auto;
+  left:0;
+  right:0;
+  overflow: auto;
+
+  color: #333;
+
+  border-radius: 2px;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+aside{
+  width: 20%;
+  background-color: #81c784;
+  min-height: 100vh;
+  color: #fafafa;
+
+  transition: left 300ms ease-in-out;
+
+  position: relative;
+  z-index: 300;
+}
+
+aside>h1{
+  padding: 0.5em;
+}
+
+aside>p{
+  padding: 0.5em;
+  padding-left: 1em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+aside>div{
+  display: none;
+  transition: display 300ms ease-in-out;
+}
+
+aside>div>a{
+  color: #fafafa;
+  display: block;
+  padding: 0.3em;
+  font-weight: lighter;
+
+  padding-left: 2em;
+
+  background-color: inherit;
+  transition: background-color 400ms ease-in-out;
+}
+
+aside>div>a:hover{
+  background-color: rgba(0,0,0,.1)
+}
+
+@media screen and (max-width: 865px){
+  aside{
+    position: absolute;
+    top: 60px;
+    left: -300px;
+    width: 300px
+  }
+  main{width: 100%}
+  main.container{width: 95%}
+}

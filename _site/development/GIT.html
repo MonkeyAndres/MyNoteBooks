@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="http://cdn.materialdesignicons.com/1.8.36/css/materialdesignicons.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/estilos.css">
+
+  <title>NoteBooks!</title>
+</head>
+<body>
+  <header>
+    <i class="mdi mdi-menu mdi-24px"></i>
+    <span>NoteBooks!</span>
+  </header>
+
+  <div class="flex-container">
+    <aside>
+      <h1>Notebooks!</h1>
+
+      <hr>
+
+       <!-- NOTE: Por todas las categorias hago un bloque -->
+      
+      <p>Development</p>
+
+      <div>
+         <!-- NOTE: Compruebo la categoria en todos los post -->
+        <a href="/development/JAVA">Java</a>
+         <!-- NOTE: Compruebo la categoria en todos los post -->
+        <a href="/development/GIT">Git & Github</a>
+         <!-- NOTE: Compruebo la categoria en todos los post -->
+        <a href="/development/Cpp">C++</a>
+        
+      </div>
+      
+
+    </aside>
+
+    <main>
+      <h1 id="git">GIT</h1>
+<p>Cuaderno de referencia rapida sobre git. No recomendable usar como guia de inicio. <br /></p>
+
+<h2 id="vocabulario">Vocabulario</h2>
+<ul>
+  <li><strong>Commit</strong>: versionado, check point, (Recomiendo: commit al día o al acabar)</li>
+  <li><strong>Branch</strong>: ramas que no afectan a el proyecto pero que luego se pueden integrar.</li>
+  <li><strong>Push</strong>: subir los cambios</li>
+  <li><strong>Pull</strong>: recuperar código de internet (sincronizar el código de github al pc)</li>
+  <li><strong>Fork</strong>: copiar un  repo de otra persona
+<br /></li>
+</ul>
+
+<h2 id="cli">CLI</h2>
+<ul>
+  <li>Diff (ver cambios)</li>
+  <li>Status (ver cambios detectados automáticamente)</li>
+  <li>Add <em>&lt; file &gt;</em> (añadir cambios)</li>
+  <li>Reset HEAD <em>&lt; file &gt;</em> (quitar cambios)</li>
+  <li>Rm <em>&lt; file &gt;</em> (borrar el archivo de github)</li>
+  <li>Commit -m “Cambios en commit” (meter cambios)</li>
+  <li>Push origin <em>&lt; branch &gt;</em> (subir cambios)</li>
+  <li>Pull origin <em>&lt; branch &gt;</em> (descargar cambios)</li>
+  <li>Log (registro de cambios)
+    <ul>
+      <li>–decorate</li>
+      <li>–graph</li>
+      <li>–all</li>
+    </ul>
+  </li>
+  <li>Branch (crea rama) (-d <em>&lt; branch &gt;</em> quitar ramas)</li>
+  <li>Checkout <em>&lt; branch &gt;</em> (cambiar entre ramas)
+    <ul>
+      <li>-b (crear y cambiar)</li>
+    </ul>
+  </li>
+  <li>Merge <em>&lt; branch &gt;</em> (mezcla la rama actual con <em>&lt; branch &gt;</em>)
+<br /></li>
+</ul>
+
+<h2 id="flujo-de-trabajo">Flujo de trabajo</h2>
+<ul>
+  <li>Iniciar git</li>
+  <li>Hacer pull</li>
+  <li>Code!</li>
+  <li>Añadir cambios</li>
+  <li>Commit</li>
+  <li>Push</li>
+</ul>
+
+    </main>
+  </div>
+
+  <script src="/assets/script.js"></script>
+</body>
+</html>

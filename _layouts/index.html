@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="http://cdn.materialdesignicons.com/1.8.36/css/materialdesignicons.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="{{ "/assets/estilos.css" | relative_url }}">
+
+  <title>NoteBooks!</title>
+</head>
+<body>
+  <header>
+    <i class="mdi mdi-menu mdi-24px"></i>
+    <span>NoteBooks!</span>
+  </header>
+
+  <div class="flex-container">
+    <aside>
+      <h1>Notebooks!</h1>
+
+      <hr>
+
+      {% for category in site.categories %} <!-- NOTE: Por todas las categorias hago un bloque -->
+      {% capture category_name %}{{ category | first }}{% endcapture %}
+      <p>{{category_name}}</p>
+
+      <div>
+        {% for post in site.categories[category_name] %} <!-- NOTE: Compruebo la categoria en todos los post -->
+        <a href="{{post.url}}">{{post.title}}</a>
+        {% endfor %}
+      </div>
+      {% endfor %}
+
+    </aside>
+
+    <main>
+      {{content}}
+    </main>
+  </div>
+
+  <script src="{{ "/assets/script.js" | relative_url }}"></script>
+</body>
+</html>

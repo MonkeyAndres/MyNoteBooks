@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="http://cdn.materialdesignicons.com/1.8.36/css/materialdesignicons.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/estilos.css">
+
+  <title>NoteBooks!</title>
+</head>
+<body>
+  <header>
+    <i class="mdi mdi-menu mdi-24px"></i>
+    <span>NoteBooks!</span>
+  </header>
+
+  <div class="flex-container">
+    <aside>
+      <h1>Notebooks!</h1>
+
+      <hr>
+
+       <!-- NOTE: Por todas las categorias hago un bloque -->
+      
+      <p>Development</p>
+
+      <div>
+         <!-- NOTE: Compruebo la categoria en todos los post -->
+        <a href="/development/JAVA">Java</a>
+         <!-- NOTE: Compruebo la categoria en todos los post -->
+        <a href="/development/GIT">Git & Github</a>
+         <!-- NOTE: Compruebo la categoria en todos los post -->
+        <a href="/development/Cpp">C++</a>
+        
+      </div>
+      
+
+    </aside>
+
+    <main>
+      <h1 id="cuaderno-de-c-y-c">CUADERNO DE C y C++</h1>
+<p>Lenguaje multiplataforma, compilado y de propósito general, lo usaría para hacer API potentes de consola porque apps con interfaz prefiero Java + FX <br /><br /></p>
+
+<p><strong>Índice</strong> <br /></p>
+<ol>
+  <li>Entornos de desarrollo <br /></li>
+  <li>Hola mundo <br /></li>
+  <li>Variables y constantes <br /></li>
+  <li>Operadores <br /></li>
+  <li>Punteros y referencias <br /></li>
+  <li>Entrada y salida estándar <br /></li>
+  <li>Control del flujo <br /></li>
+  <li>Arrays <br /></li>
+  <li>Cadenas <br /></li>
+  <li>Estructuras <br /></li>
+  <li>Funciones <br /></li>
+  <li>Ficheros en C y C++ <br /></li>
+  <li>Estructuras dinámicas <br /></li>
+  <li>POO <br /></li>
+  <li>Técnicas de programación <br /></li>
+  <li>Frameworks <br /></li>
+</ol>
+
+<p><br /></p>
+
+<h2 id="1---entornos-de-desarrollo">1 - Entornos de desarrollo</h2>
+<p>A día de hoy uso el entorno CodeBlocks aunque probablemente me cambie a otro más bonito en apariencia por ejemplo SublimeText o Atom.</p>
+
+<h2 id="2---hola-mundo">2 - Hola mundo</h2>
+<p>Un <strong>hola mundo</strong> convencional en C tiene el siguiente formato:</p>
+
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="cm">/* Función principal */</span>
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span><span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="cm">/* Impresión por pantalla y salida del programa*/</span>
+   <span class="n">printf</span><span class="p">(</span><span class="s">"Hola mundo</span><span class="se">\n</span><span class="s">"</span><span class="p">);</span>
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Mientras que en C++ se veria como el siguiente:</p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span>
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="cm">/* Función principal */</span>
+<span class="kt">int</span> <span class="nf">main</span> <span class="p">(</span><span class="kt">int</span> <span class="n">argc</span><span class="p">,</span><span class="kt">char</span> <span class="o">**</span><span class="n">argv</span><span class="p">)</span>
+<span class="p">{</span>
+   <span class="cm">/* Impresión por pantalla y salida del programa*/</span>
+   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Hola mundo"</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="3---variables-y-constantes">3 - Variables y constantes</h2>
+<p>En C y C++ existe varios <strong>tipos de datos</strong> que se deben poner al definir una variable. <br />
+Tipos de datos:</p>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="o">*</span> <span class="n">INT</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="o">*</span> <span class="n">CHAR</span> <span class="o">=</span> <span class="err">‘</span><span class="n">A</span><span class="err">’</span>
+<span class="o">*</span> <span class="n">FLOAT</span> <span class="o">=</span> <span class="mf">3.14</span>
+<span class="o">*</span> <span class="n">DOUBLE</span> <span class="o">=</span> <span class="mf">3.119e6</span>
+<span class="o">*</span> <span class="n">VOID</span> <span class="o">=</span> <span class="n">no</span> <span class="n">valor</span>
+<span class="o">*</span> <span class="n">BOOL</span> <span class="p">(</span><span class="n">solo</span> <span class="n">C</span><span class="o">++</span><span class="p">)</span> <span class="o">=</span> <span class="nb">true</span>
+</code></pre>
+</div>
+<p>A el tipo INT se le puede añadir short o long al principio.<br />
+<strong>Sintaxis de variables:</strong> <code class="highlighter-rouge">tipo identificador, identificador;</code></p>
+
+<p>Las constates se definen de dos maneras ambas se colocan después de include:</p>
+<ul>
+  <li><code class="highlighter-rouge">#define IDENTIFICADOR valor</code>		NO TIPO DATO!</li>
+  <li><code class="highlighter-rouge">const tipo IDENTIFICADOR valor;</code>  OJO PUNTO Y COMA!</li>
+</ul>
+
+<h2 id="4---operadores">4 - Operadores</h2>
+<p>Son los mismos que en JS</p>
+
+<h2 id="5---punteros-y-referencias">5 - Punteros y Referencias</h2>
+<p><strong>Puntero</strong>: ubicacion del trozo de memoria que guarda una variable. <br /></p>
+
+<p>Ejemplo Puntero:</p>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span>
+  <span class="c1">//Creo un puntero con el * antes del identificador
+</span>  <span class="kt">int</span> <span class="o">*</span><span class="n">miPuntero</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">miVariable</span><span class="p">;</span>
+
+  <span class="c1">//Indico a el puntero a que variable quiero apuntar
+</span>  <span class="n">miPuntero</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">miVariable</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>Operadores de puntero:</strong></p>
+<ul>
+  <li>miPuntero = Retorna la ubicacion de la variable a la que apunta</li>
+  <li>&amp;miPuntero = Retorna la ubicacion del puntero</li>
+  <li>*miPuntero = Retorna el valor de la variable a la que apunta</li>
+</ul>
+
+<h2 id="6---entrada-y-salida-estandar">6 - Entrada y salida estandar</h2>
+<p>La divido en dos partes, primero C y despues C++</p>
+
+<h4 id="c">C</h4>
+<p>Pausa hasta presionar cualquier tecla.</p>
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;stdio.h&gt;
+</span>
+<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span>
+  <span class="c1">//Mensaje de salida
+</span>  <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">Presiona cualquier tecla para continuar..."</span><span class="p">);</span>
+
+  <span class="c1">//Funcion que detiene el flujo y coje un char
+</span>  <span class="n">getchar</span><span class="p">();</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<p><strong>Funciones:</strong></p>
+<ul>
+  <li>getchar() = Recoje un caracter ingresado por teclado</li>
+  <li>printf(“%d”, 10) = Imprime el texto entre “”</li>
+  <li>scanf(“%d”, &amp;entero) = Recoje caracteres del teclado y los almacena en la variable</li>
+  <li>fflush(stdin) = Limpia cache</li>
+</ul>
+
+<p>####C++</p>
+<ul>
+  <li>cout « “Hola mundo” = Muestra texto en pantalla</li>
+  <li>cin » miVariable = Guarda lo introducido por teclado en una variable</li>
+</ul>
+
+<h2 id="7---control-de-flujo">7 - Control de flujo</h2>
+<p>Las principales estructuras de control de flujo son: if-else, for, while, do-while, switch.</p>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span>
+  <span class="c1">//CONDICIONAL IF
+</span>  <span class="k">if</span><span class="p">(</span><span class="n">condicion</span><span class="p">){</span>
+    <span class="c1">//Comandos
+</span>  <span class="p">}</span> <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">condicion</span><span class="p">){</span>
+    <span class="c1">//Comandos
+</span>  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">//Comandos
+</span>  <span class="p">}</span>
+
+  <span class="c1">//CONDICIONAL SWITCH
+</span>  <span class="k">switch</span> <span class="p">(</span><span class="n">variable</span><span class="p">){</span>
+    <span class="k">case</span> <span class="n">valor</span><span class="p">:</span>
+      <span class="c1">//Comandos
+</span>      <span class="k">break</span><span class="p">;</span>
+    <span class="k">default</span><span class="o">:</span>
+      <span class="c1">//Comandos
+</span>  <span class="p">}</span>
+
+  <span class="c1">//BLUCLE FOR
+</span>  <span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&gt;</span><span class="n">valor</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="c1">//Comandos
+</span>  <span class="p">}</span>
+
+  <span class="c1">//BUCLE WHILE
+</span>  <span class="k">while</span><span class="p">(</span><span class="n">condicion</span><span class="p">){</span>
+    <span class="c1">//Comandos
+</span>  <span class="p">}</span>
+
+  <span class="c1">//BUCLE DO-WHILE
+</span>  <span class="k">do</span><span class="p">{</span>
+    <span class="c1">//Comandos
+</span>  <span class="p">}</span><span class="k">while</span><span class="p">(</span><span class="n">condicion</span><span class="p">)</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="8---arrays">8 - Arrays</h2>
+<p>Existen dos tipos de arrays, unidireccionales y bidireccionales. Todos los elementos dentro de un array deben ser del mismo tipo.</p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+  <span class="c1">//Definicion de un array unidireccional (definir tamaño)
+</span>  <span class="kt">int</span> <span class="n">miArray</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">10</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">};</span>
+
+  <span class="c1">//Definicion de array bidireccional (filas, columnas)
+</span>  <span class="kt">int</span> <span class="n">arrayBidireccional</span><span class="p">[</span><span class="mi">3</span><span class="p">][</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="c1">//Ojo coma al final
+</span>    <span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span>
+    <span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span>
+  <span class="p">};</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="9---cadenas">9 - Cadenas</h2>
+<p>Se declaran como si fueran un array de caracteres. Siempre tienes que poner un caracter de mas ya que el ultimo hueco del array se completa con ‘\0’. En C añadir &lt; string.h &gt;</p>
+
+<p><strong>Funciones:</strong></p>
+<ul>
+  <li>gets(variable) = Recoje cadenas con espacios incluidos</li>
+  <li>printf(“%s”, &amp;variable) = Imprime una cadena</li>
+  <li>strcat(destino, origen) = Copia la cadena del segundo parametro a continuacion de la primera</li>
+  <li>strlen(cadena) = Indica el tamaño de la cadena</li>
+  <li>strstr(cadena1, cadena2) = Buscar la cadena dos dentro de la primera</li>
+  <li>strlwr(cadena) = Convierte una cadena a minusculas</li>
+  <li>strupr(cadena) = Convierte una cadena a mayusculas</li>
+  <li>atoi(cadena) = Convierte una cadena a int</li>
+</ul>
+
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="c1">//Funcion strtok()
+</span><span class="cp">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+</span>
+<span class="kt">int</span> <span class="n">main</span><span class="p">(){</span>
+  <span class="c1">//Declaramos un puntero y una cadena
+</span>  <span class="kt">char</span> <span class="n">cadena</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span> <span class="o">=</span> <span class="s">"platano, manzana, pera"</span><span class="p">;</span>
+  <span class="kt">char</span> <span class="o">*</span><span class="n">cachos</span><span class="p">;</span>
+
+  <span class="c1">//Definimos el puntero
+</span>  <span class="n">p</span> <span class="o">=</span> <span class="n">strtok</span><span class="p">(</span><span class="n">cadena</span><span class="p">,</span> <span class="s">","</span><span class="p">);</span>
+
+  <span class="c1">//Comprobamos si hay fragmentos
+</span>  <span class="k">if</span><span class="p">(</span><span class="n">p</span><span class="p">){</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">%s"</span><span class="p">,</span> <span class="n">p</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="c1">//Seguimos comprobando mas fragmentos (OJO NULL)
+</span>  <span class="k">while</span><span class="p">(</span><span class="n">p</span> <span class="o">=</span> <span class="n">strtok</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="s">","</span><span class="p">)){</span>
+    <span class="n">printf</span><span class="p">(</span><span class="s">"</span><span class="se">\n</span><span class="s">%s"</span><span class="p">,</span> <span class="n">p</span><span class="p">);</span>
+  <span class="p">}</span>
+
+  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="10---estructuras">10 - Estructuras</h2>
+<p>Son arrays que pueden almacenar diferentes tipos de datos. <br />
+<strong>Concepto:</strong> Es como cuando defines el modelo de una db. Como un tipo de dato. <br />
+<strong>Consejo:</strong> Empezar las estructuras con tipoNombre.<br /></p>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="cm">/* Aqui includes y constantes */</span>
+
+<span class="c1">//Se define la estructura
+</span><span class="k">struct</span> <span class="n">tipoLibro</span><span class="p">{</span>
+  <span class="kt">int</span> <span class="n">paginas</span><span class="p">;</span>
+  <span class="kt">char</span> <span class="n">autor</span><span class="p">[</span><span class="mi">100</span><span class="p">];</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span>
+  <span class="c1">//La variable no se declara
+</span>  <span class="k">struct</span> <span class="n">tipoLibro</span> <span class="n">variable</span><span class="p">;</span>
+  <span class="n">variable</span><span class="p">.</span><span class="n">paginas</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+  <span class="n">variable</span><span class="p">.</span><span class="n">autor</span> <span class="o">=</span> <span class="s">"Yo"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="11---funciones">11 - Funciones</h2>
+<p>Son piezas individuales de codigo reusables y con argumentos.</p>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="c1">//Includes
+</span>
+<span class="c1">//OJO A ESTO
+</span><span class="kt">void</span> <span class="n">hola</span><span class="p">(</span><span class="kt">char</span> <span class="n">mensaje</span><span class="p">);</span>
+
+<span class="c1">//Funcion main
+</span><span class="kt">void</span> <span class="n">hola</span><span class="p">(</span><span class="kt">char</span> <span class="n">mensaje</span><span class="p">){</span>
+  <span class="n">cout</span><span class="o">&lt;&lt;</span> <span class="n">mensaje</span> <span class="o">&lt;&lt;</span><span class="n">endl</span><span class="p">;</span>
+
+  <span class="c1">//Si tiene valor de retorno se cambia el void
+</span><span class="p">}</span>
+</code></pre>
+</div>
+<p>Para acceder a una variable desde una funcion se usan punteros o referencias.</p>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="kt">void</span> <span class="n">incrementar</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">n</span><span class="p">);</span>
+
+<span class="kt">int</span> <span class="n">main</span> <span class="p">(</span><span class="kt">void</span><span class="p">){</span>
+  <span class="kt">int</span> <span class="n">numero</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+
+  <span class="c1">//Ojo con el &amp;
+</span>  <span class="n">incrementar</span><span class="p">(</span><span class="o">&amp;</span><span class="n">numero</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">incrementar</span> <span class="p">(</span><span class="kt">int</span> <span class="o">*</span><span class="n">n</span><span class="p">){</span>
+  <span class="o">*</span><span class="n">n</span> <span class="o">=</span> <span class="o">*</span><span class="n">n</span> <span class="o">+</span> <span class="mi">1</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="12---ficheros-en-c-y-c">12 - Ficheros en C y C++</h2>
+<h4 id="ficheros-en-c">Ficheros en C</h4>
+<div class="language-c highlighter-rouge"><pre class="highlight"><code><span class="kt">FILE</span> <span class="o">*</span><span class="n">archivo</span><span class="p">;</span>
+
+<span class="c1">//Abrir un fichero
+</span><span class="n">archivo</span> <span class="o">=</span> <span class="n">fopen</span><span class="p">(</span><span class="s">"db.txt"</span><span class="p">,</span> <span class="n">modo</span><span class="p">);</span>
+
+<span class="cm">/* Modos de abrir un archivo (aniadir t al final para txt)
+r = read
+a = append
+r+ = leer y modificar
+w+ = crea y lee
+*/</span>
+
+<span class="c1">//Cerrar el archivo
+</span><span class="n">fclose</span><span class="p">(</span><span class="n">archivo</span><span class="p">);</span>
+
+<span class="c1">//Escribir en un fichero
+</span><span class="n">fputs</span><span class="p">(</span><span class="s">"Hola mundo"</span><span class="p">,</span> <span class="n">archivo</span><span class="p">);</span>
+
+<span class="c1">//Leer un caracter
+</span><span class="n">fgetc</span><span class="p">(</span><span class="n">archivo</span><span class="p">);</span>
+
+<span class="c1">//Ver si se ha llegado al final del archivo (while con anterior)
+</span><span class="n">feof</span><span class="p">(</span><span class="n">archivo</span><span class="p">);</span>
+
+<span class="c1">//Escribir en archivo
+</span><span class="n">fwrite</span><span class="p">(</span><span class="n">direccion_dato</span><span class="p">,</span> <span class="n">tamanio</span><span class="p">,</span> <span class="n">veces</span><span class="p">,</span> <span class="n">archivo</span><span class="p">);</span>
+
+<span class="c1">//Leer cualquier cosa
+</span><span class="n">fread</span><span class="p">(</span><span class="n">direccion_dato</span><span class="p">,</span> <span class="n">tamanio</span><span class="p">,</span> <span class="n">veces</span><span class="p">,</span> <span class="n">archivo</span><span class="p">);</span>
+</code></pre>
+</div>
+
+<h4 id="ficheros-en-c-1">Ficheros en C++</h4>
+<p>Para manejar ficheros en C++ necesitamos llamar una biblioteca especial, hay dos tipos de variable de archivo uno que crea (ofstream)  y otro que solo abre (ifstream).</p>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="c1">//
+</span>
+<span class="cp">#include &lt;fstream&gt;
+#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span>
+  <span class="c1">//Creamos variable fichero
+</span>  <span class="n">ifstream</span> <span class="n">miArchivo</span><span class="p">;</span>
+  <span class="n">miArchivo</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="n">archivo</span><span class="p">,</span> <span class="n">modo</span><span class="p">);</span>
+
+  <span class="cm">/* Modos Abrir Archivo
+  ios::app = Añade datos al final del archivo
+  ios::in = Lee datos, por defecto ifstream
+  ios::out = Escribe datos, por defecto ofstream
+  ios::binary = Abrir modo binario
+  ios::ate = Coloca un apuntador del fichero al final del mismo
+  ios::nocreate = Si el archivo no existe no abre
+  ios::noreplace = No remplaza archivo
+  ios::trunc = Sobreescribe el archivo
+  */</span>
+
+  <span class="c1">//Escribir datos en un archivo
+</span>  <span class="n">miArchivo</span> <span class="o">&lt;&lt;</span> <span class="s">"Hola mundo"</span><span class="p">;</span>
+
+  <span class="c1">//Detectar el final archivo (en un while)
+</span>  <span class="n">miArchivo</span><span class="p">.</span><span class="n">eof</span><span class="p">();</span>
+
+  <span class="c1">//Leer cadenas archivo
+</span>  <span class="n">miArchivo</span> <span class="o">&gt;&gt;</span> <span class="n">cadena</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">cadena</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<p>Ahora un ejemplo de persistencia de estructuras en archivos .dat</p>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="c1">//Base de datos Twitter
+</span>
+<span class="cp">#include &lt;fstream&gt;
+#include &lt;iostream&gt;
+</span><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="c1">//Defino estructura
+</span><span class="k">struct</span> <span class="n">tipoUser</span> <span class="p">{</span>
+  <span class="kt">char</span> <span class="n">nombre</span><span class="p">[</span><span class="mi">30</span><span class="p">];</span>
+  <span class="kt">char</span> <span class="n">username</span><span class="p">[</span><span class="mi">10</span><span class="p">];</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span>
+  <span class="c1">//Asigna variable a la estructura
+</span>  <span class="k">struct</span> <span class="n">tipoUser</span> <span class="n">usuario</span><span class="p">;</span>
+
+  <span class="c1">//Crea variable archivo
+</span>  <span class="n">ofstream</span> <span class="n">db</span><span class="p">;</span>
+  <span class="c1">//Abro el archivo en modo binario
+</span>  <span class="n">db</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">"db.dat"</span><span class="p">,</span> <span class="n">ios</span><span class="o">::</span><span class="n">out</span> <span class="o">|</span> <span class="n">ios</span><span class="o">::</span><span class="n">binary</span><span class="p">);</span>
+
+  <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">db</span><span class="p">){</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"No se ha podido crear el fichero"</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="c1">//Pedimos tres usuarios
+</span>    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="mi">3</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">){</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Escriba su nombre &gt;&gt; "</span><span class="p">;</span>
+      <span class="n">cin</span> <span class="o">&lt;&lt;</span> <span class="n">usuario</span><span class="p">.</span><span class="n">nombre</span><span class="p">;</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Escriba su usuario &gt;&gt; "</span><span class="p">;</span>
+      <span class="n">cin</span> <span class="o">&lt;&lt;</span> <span class="n">usuario</span><span class="p">.</span><span class="n">username</span><span class="p">;</span>
+
+      <span class="c1">//Añadimos el nombre al fichero || sizeof() = Indica tamaño
+</span>      <span class="n">db</span><span class="p">.</span><span class="n">write</span><span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="o">&amp;</span><span class="n">usuario</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">usuario</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="c1">//Cierro fichero
+</span>    <span class="n">db</span><span class="p">.</span><span class="n">close</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<p>Para leer los datos anteriormente metidos en db.dat</p>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="c1">//Abrimos fichero modo lectura binario
+</span><span class="n">db</span><span class="p">.</span><span class="n">open</span><span class="p">(</span><span class="s">"db.dat"</span><span class="p">,</span> <span class="n">ios</span><span class="o">::</span><span class="n">in</span> <span class="o">|</span> <span class="n">ios</span><span class="o">::</span><span class="n">binary</span><span class="p">);</span>
+
+<span class="c1">//Leemos todo ojo sizeof()
+</span><span class="n">db</span><span class="p">.</span><span class="n">read</span><span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="err">$</span><span class="n">usuario</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">tipoUser</span><span class="p">));</span>
+
+<span class="c1">//Bucle hasta final archivo
+</span><span class="k">while</span><span class="p">(</span><span class="n">db</span><span class="p">.</span><span class="n">eof</span><span class="p">()){</span>
+  <span class="c1">//Imprimimos resultados
+</span>  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Nombre = "</span> <span class="o">&lt;&lt;</span> <span class="n">usuario</span><span class="p">.</span><span class="n">nombre</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">"Usuario = "</span> <span class="o">&lt;&lt;</span> <span class="n">usuario</span><span class="p">.</span><span class="n">username</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+  <span class="c1">//Volvemos a leer otro registro
+</span>  <span class="n">db</span><span class="p">.</span><span class="n">read</span><span class="p">((</span><span class="kt">char</span> <span class="o">*</span><span class="p">)</span> <span class="err">$</span><span class="n">usuario</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">tipoUser</span><span class="p">));</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+<p>Mirar uso de seekp y seekg.</p>
+
+<h2 id="13---estructuras-dinamicas">13 - Estructuras dinamicas</h2>
+<p>Es una forma de crear “arrays” con un tamaño dinamico, es decir, se adaptan a datos nuevos. Es importante eliminarlos al final con <code class="highlighter-rouge">delete();</code> <br />
+Esto se consigue reservando memoria y liberandola, ver siguiente ejemplo.</p>
+
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="cp">#include &lt;iostream&gt;
+#include &lt;stdlib.h&gt; //Libreria requerida para reservar memoria
+</span>
+<span class="c1">//Creamos la estructura nodo
+</span><span class="k">struct</span> <span class="n">nodo</span><span class="p">{</span>
+  <span class="kt">int</span> <span class="n">ip</span><span class="p">;</span> <span class="c1">//Definimos datos del nodo
+</span>
+  <span class="c1">//Definimos un puntero que apunta a el siguiente elemento
+</span>  <span class="k">struct</span> <span class="n">nodo</span> <span class="o">*</span><span class="n">siguiente</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c1">//Definimos un tipo de dato tipoNodo
+</span><span class="k">typedef</span> <span class="k">struct</span> <span class="n">nodo</span> <span class="o">*</span><span class="n">tipoNodo</span><span class="p">;</span>
+
+<span class="c1">//Funciones
+</span><span class="kt">void</span> <span class="n">insertarInicio</span><span class="p">(</span><span class="n">tipoNodo</span> <span class="o">&amp;</span><span class="n">miNodo</span><span class="p">,</span> <span class="kt">int</span> <span class="n">valor</span><span class="p">);</span>
+<span class="kt">void</span> <span class="n">insertarFinal</span><span class="p">(</span><span class="n">tipoNodo</span> <span class="o">&amp;</span><span class="n">miNodo</span><span class="p">,</span> <span class="kt">int</span> <span class="n">valor</span><span class="p">);</span>
+<span class="n">tipoNodo</span> <span class="n">buscarNodo</span><span class="p">(</span><span class="n">tipoNodo</span> <span class="o">&amp;</span><span class="n">miNodo</span><span class="p">,</span> <span class="kt">int</span> <span class="n">valor</span><span class="p">);</span>
+
+<span class="c1">//Funcion principal
+</span><span class="kt">int</span> <span class="n">main</span><span class="p">(</span><span class="kt">void</span><span class="p">){</span>
+  <span class="n">tipoNodo</span> <span class="n">miNodo</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span> <span class="c1">//Igualamos el nodo principal a NULL
+</span>  <span class="n">tipoNodo</span> <span class="n">resultado</span><span class="p">;</span>
+  <span class="kt">int</span> <span class="n">valor</span><span class="p">;</span>
+
+  <span class="n">insertarInicio</span><span class="p">(</span><span class="n">miNodo</span><span class="p">,</span> <span class="n">valor</span><span class="p">);</span>
+  <span class="n">insertarFinal</span><span class="p">(</span><span class="n">miNodo</span><span class="p">,</span> <span class="n">valor</span><span class="p">);</span>
+
+  <span class="n">resultado</span> <span class="o">=</span> <span class="n">buscarNodo</span><span class="p">(</span><span class="n">miNodo</span><span class="p">,</span> <span class="n">valor</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">insertarInicio</span><span class="p">(</span><span class="n">tipoNodo</span> <span class="o">&amp;</span><span class="n">miNodo</span><span class="p">,</span> <span class="kt">int</span> <span class="n">valor</span><span class="p">){</span>
+  <span class="n">tipoNodo</span> <span class="n">nd</span><span class="p">;</span> <span class="c1">//Definicion variable tipoNodo
+</span>  <span class="n">nd</span> <span class="o">=</span> <span class="k">new</span><span class="p">(</span><span class="k">struct</span> <span class="n">nodo</span><span class="p">);</span> <span class="c1">//Asignamos espacio dinamico a la variable nd
+</span>
+  <span class="c1">//Decimos que el ip es igual a valor, se accede a ip con "-&gt;"
+</span>  <span class="n">nd</span><span class="o">-&gt;</span><span class="n">ip</span> <span class="o">=</span> <span class="n">valor</span><span class="p">;</span>
+  <span class="n">nd</span><span class="o">-&gt;</span><span class="n">siguiente</span> <span class="o">=</span> <span class="n">miNodo</span><span class="p">;</span> <span class="c1">//Siguiente = miNodo pasado por parametro
+</span>  <span class="n">miNodo</span> <span class="o">=</span> <span class="n">nd</span><span class="p">;</span> <span class="c1">//Hago que miNodo valga el nuevo nodo nd
+</span><span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">insertarFinal</span><span class="p">(</span><span class="n">tipoNodo</span> <span class="o">&amp;</span><span class="n">miNodo</span><span class="p">,</span> <span class="kt">int</span> <span class="n">valor</span><span class="p">){</span>
+  <span class="n">tipoNodo</span> <span class="n">nd1</span><span class="p">,</span> <span class="n">nd2</span> <span class="o">=</span> <span class="k">new</span><span class="p">(</span><span class="k">struct</span> <span class="n">nodo</span><span class="p">);</span> <span class="c1">//Creo dos variables una dinamica
+</span>
+  <span class="c1">//Relleno los datos de el nodo
+</span>  <span class="n">nd2</span><span class="o">-&gt;</span><span class="n">ip</span> <span class="o">=</span> <span class="n">valor</span><span class="p">;</span>
+  <span class="n">nd2</span><span class="o">-&gt;</span><span class="n">siguiente</span> <span class="o">=</span> <span class="n">null</span><span class="p">;</span> <span class="c1">//Para que e¡sea el ultimo
+</span>
+  <span class="c1">//Si es el unico nodo ponlo el primero
+</span>  <span class="k">if</span><span class="p">(</span><span class="n">miNodo</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="n">miNodo</span> <span class="o">=</span> <span class="n">nd2</span><span class="p">;</span>
+
+  <span class="k">else</span>
+  	<span class="n">nd1</span> <span class="o">=</span> <span class="n">miNodo</span><span class="p">;</span>
+
+  	<span class="c1">//Mientras el nodo no tenga siguiente se cambia de nodo
+</span>  	<span class="k">while</span><span class="p">(</span><span class="n">nd1</span><span class="o">-&gt;</span><span class="n">siguiente</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">){</span>
+  	  <span class="c1">//Cambio a el parametro siguiente del siguiente nodo
+</span>      <span class="n">nd1</span> <span class="o">=</span> <span class="n">nd1</span><span class="o">-&gt;</span><span class="n">siguiente</span><span class="p">;</span>
+  	<span class="p">}</span>
+  	<span class="n">nd1</span><span class="o">-&gt;</span><span class="n">siguiente</span> <span class="o">=</span> <span class="n">nd2</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">tipoNodo</span> <span class="n">buscarNodo</span><span class="p">(</span><span class="n">tipoNodo</span> <span class="o">&amp;</span><span class="n">miNodo</span><span class="p">,</span> <span class="kt">int</span> <span class="n">valor</span><span class="p">){</span>
+  <span class="n">tipoNodo</span> <span class="n">nd</span> <span class="o">=</span> <span class="n">miNodo</span><span class="p">;</span>
+
+  <span class="cm">/*
+  Mientras el parametro siguiente del nodo no sea null
+  se verifica si el apartado ip es igual al valor,
+  si es asi se retorna el nodo nd.
+  */</span>
+  <span class="k">while</span><span class="p">(</span><span class="n">nd1</span><span class="o">-&gt;</span><span class="n">siguiente</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">){</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">nd</span><span class="o">-&gt;</span><span class="n">ip</span> <span class="o">==</span> <span class="n">valor</span><span class="p">)</span> <span class="k">return</span> <span class="n">nd</span><span class="p">;</span>
+    <span class="k">else</span>
+      <span class="n">nd</span> <span class="o">=</span> <span class="n">nd</span><span class="o">-&gt;</span><span class="n">siguiente</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+</div>
+
+<h2 id="14---poo">14 - POO</h2>
+<p>La programacion orientada a objetos (POO) es una tecnica de programacion en la que se programan clases que son como el molde de un objeto y luego este molde se instancia y se crea el objeto. <br />
+Un objeto puede tener atributos (variables), metodos (funciones) y un constructor (funcion que se ejecuta al instanciar la clase) <br />
+Ejemplo de clase:</p>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="cm">/*
+Declaracion de la clase (molde)
+Los metodos suelen ser privados y los metodos publicos
+*/</span>
+
+<span class="k">class</span> <span class="nc">radio</span><span class="p">{</span>
+  <span class="k">private</span><span class="o">:</span>
+  	<span class="kt">int</span> <span class="n">frecuencia</span><span class="p">;</span>
+  	<span class="kt">int</span> <span class="n">volumen</span><span class="p">;</span>
+  <span class="k">public</span><span class="o">:</span>
+  	<span class="kt">void</span> <span class="n">subirVolumen</span><span class="p">();</span>
+  	<span class="kt">void</span> <span class="n">bajarVolumen</span><span class="p">();</span>
+  	<span class="kt">void</span> <span class="n">cambiarFrecuencia</span><span class="p">(</span><span class="kt">int</span> <span class="n">valor</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">//Declaro los metodos
+</span><span class="kt">void</span> <span class="n">radio</span><span class="o">::</span><span class="n">subirVolumen</span><span class="p">(){</span><span class="n">volumen</span><span class="o">++</span><span class="p">;}</span>
+<span class="kt">void</span> <span class="n">radio</span><span class="o">::</span><span class="n">bajarVolumen</span><span class="p">(){</span><span class="n">volumen</span><span class="o">--</span><span class="p">;}</span>
+<span class="kt">void</span> <span class="n">radio</span><span class="o">::</span><span class="n">cambiarFrecuencia</span><span class="p">(</span><span class="kt">int</span> <span class="n">valor</span><span class="p">){</span><span class="n">frecuencia</span> <span class="o">=</span> <span class="n">valor</span><span class="p">;}</span>
+
+<span class="c1">//Instancio clase
+</span><span class="n">radio</span> <span class="n">miRadio</span><span class="p">;</span>
+</code></pre>
+</div>
+<p>En las clases tambien se puede trabajar con punteros:</p>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="n">radio</span> <span class="o">*</span><span class="n">miRadio</span> <span class="o">=</span> <span class="k">new</span> <span class="n">radio</span><span class="p">;</span> <span class="c1">//Crear objeto con puntero
+</span><span class="n">miRadio</span><span class="o">-&gt;</span><span class="n">subirVolumen</span><span class="p">();</span> <span class="c1">//Acceso a metodos con -&gt;
+</span><span class="k">delete</span> <span class="n">miRadio</span><span class="p">;</span> <span class="c1">//Eliminar memoria
+</span></code></pre>
+</div>
+<p>En C++ existen tanto constructores como destructores, los constructores de usan para inicializar los atributos de la clase y los destructores para liberar la memoria en caso de usar punteros. Estos se definen sin tipo.</p>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">radio</span><span class="p">{</span>
+  <span class="k">private</span><span class="o">:</span>
+  	<span class="kt">int</span> <span class="n">frecuencia</span><span class="p">;</span>
+  	<span class="kt">int</span> <span class="n">volumen</span><span class="p">;</span>
+  <span class="k">public</span><span class="o">:</span>
+  	<span class="kt">void</span> <span class="n">subirVolumen</span><span class="p">();</span>
+  	<span class="kt">void</span> <span class="n">bajarVolumen</span><span class="p">();</span>
+  	<span class="kt">void</span> <span class="n">cambiarFrecuencia</span><span class="p">(</span><span class="kt">int</span> <span class="n">valor</span><span class="p">);</span>
+
+  	<span class="n">radio</span><span class="p">();</span> <span class="c1">//Contructor
+</span>  	<span class="o">~</span><span class="n">radio</span><span class="p">();</span> <span class="c1">//Destructor
+</span><span class="p">}</span>
+</code></pre>
+</div>
+<p>Ademas de esto C++ dispone de soporte para la sobrecarga de metodos, es decir, se pueden declarar metodos con el mismo identificador pero distintos parametros y C++ escogera el mas adecuado. <br />
+C++ tambien tiene una de las principales funciones de la POO, la herencia de clases, esta se define de la siguiente manera:</p>
+<div class="language-c++ highlighter-rouge"><pre class="highlight"><code><span class="k">class</span> <span class="nc">persona</span><span class="p">{}</span>
+<span class="k">class</span> <span class="nc">desarrollador</span> <span class="o">:</span> <span class="k">public</span> <span class="n">persona</span> <span class="p">{};</span>
+</code></pre>
+</div>
+
+<p>Investigar Polimorfismo :P</p>
+
+<h2 id="15---técnicas-de-programación">15 - Técnicas de programación</h2>
+<p>Existen 4 principales tecnicas de programacion: Convencional, Estructurada, Modular, POO.</p>
+<ul>
+  <li>Convencional: busca que el programa funcione, consigue esto con un pegote de codigo ilegible. No recomendada</li>
+  <li>Estructurada: hace uso de estructuras de control, se prohibe el uso de “goto”</li>
+  <li>Modular: divide y venceras. Divide el programa en pequeños programas, obligatorio un modulo principal.</li>
+  <li>POO: es muy intuitiva consiste en la creacion de objetos como los naturales en el mundo, un ordenador, una pelota, un perro etc.</li>
+</ul>
+
+<h2 id="16---frameworks">16 - Frameworks</h2>
+<p>Coming soon :D</p>
+
+    </main>
+  </div>
+
+  <script src="/assets/script.js"></script>
+</body>
+</html>

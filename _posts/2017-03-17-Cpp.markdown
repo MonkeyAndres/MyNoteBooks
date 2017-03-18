@@ -1,3 +1,9 @@
+---
+layout: index
+title: C++
+categories: Development
+---
+
 # CUADERNO DE C y C++
 Lenguaje multiplataforma, compilado y de propósito general, lo usaría para hacer API potentes de consola porque apps con interfaz prefiero Java + FX <br><br>
 
@@ -50,7 +56,7 @@ using namespace std;
 int main (int argc,char **argv)
 {
    /* Impresión por pantalla y salida del programa*/
-   cout << "Hola mundo" << endl; 
+   cout << "Hola mundo" << endl;
    return 0;
 }
 ```
@@ -69,7 +75,7 @@ Tipos de datos:
 A el tipo INT se le puede añadir short o long al principio.<br>
 **Sintaxis de variables:** `tipo identificador, identificador;`
 
-Las constates se definen de dos maneras ambas se colocan después de include: 
+Las constates se definen de dos maneras ambas se colocan después de include:
 * `#define IDENTIFICADOR valor`		NO TIPO DATO!
 * `const tipo IDENTIFICADOR valor;`  OJO PUNTO Y COMA!
 
@@ -85,10 +91,10 @@ int main(void){
   //Creo un puntero con el * antes del identificador
   int *miPuntero;
   int miVariable;
-  
+
   //Indico a el puntero a que variable quiero apuntar
   miPuntero = &miVariable;
-  
+
   return 0;
 }
 ```
@@ -109,15 +115,15 @@ Pausa hasta presionar cualquier tecla.
 int main(void){
   //Mensaje de salida
   printf("\nPresiona cualquier tecla para continuar...");
-  
+
   //Funcion que detiene el flujo y coje un char
   getchar();
-  
+
   return 0;
 }
 ```
 
-**Funciones:** 
+**Funciones:**
 * getchar() = Recoje un caracter ingresado por teclado
 * printf("%d", 10) = Imprime el texto entre ""
 * scanf("%d", &entero) = Recoje caracteres del teclado y los almacena en la variable
@@ -142,7 +148,7 @@ int main(void){
   } else {
     //Comandos
   }
-  
+
   //CONDICIONAL SWITCH
   switch (variable){
     case valor:
@@ -151,22 +157,22 @@ int main(void){
     default:
       //Comandos
   }
-  
+
   //BLUCLE FOR
   for(i=0; i>valor; i++){
     //Comandos
   }
-  
+
   //BUCLE WHILE
   while(condicion){
     //Comandos
   }
-  
+
   //BUCLE DO-WHILE
   do{
     //Comandos
   }while(condicion)
-  
+
   return 0;
 }
 ```
@@ -181,14 +187,14 @@ using namespace std;
 int main(){
   //Definicion de un array unidireccional (definir tamaño)
   int miArray[10] = {10,1,1,1,1,1,1,1};
-  
+
   //Definicion de array bidireccional (filas, columnas)
   int arrayBidireccional[3][3] = {
     0,1,0, //Ojo coma al final
     0,0,1,
     1,1,1
   };
-  
+
   return 0;
 }
 ```
@@ -215,20 +221,20 @@ int main(){
   //Declaramos un puntero y una cadena
   char cadena[100] = "platano, manzana, pera";
   char *cachos;
-  
+
   //Definimos el puntero
   p = strtok(cadena, ",");
-  
+
   //Comprobamos si hay fragmentos
   if(p){
     printf("\n%s", p);
   }
-  
+
   //Seguimos comprobando mas fragmentos (OJO NULL)
   while(p = strtok(NULL, ",")){
     printf("\n%s", p);
   }
-  
+
   return 0;
 }
 ```
@@ -265,7 +271,7 @@ void hola(char mensaje);
 //Funcion main
 void hola(char mensaje){
   cout<< mensaje <<endl;
-  
+
   //Si tiene valor de retorno se cambia el void
 }
 ```
@@ -275,7 +281,7 @@ void incrementar (int *n);
 
 int main (void){
   int numero = 1;
-  
+
   //Ojo con el &
   incrementar(&numero);
 }
@@ -332,7 +338,7 @@ int main(void){
   //Creamos variable fichero
   ifstream miArchivo;
   miArchivo.open(archivo, modo);
-  
+
   /* Modos Abrir Archivo
   ios::app = Añade datos al final del archivo
   ios::in = Lee datos, por defecto ifstream
@@ -343,13 +349,13 @@ int main(void){
   ios::noreplace = No remplaza archivo
   ios::trunc = Sobreescribe el archivo
   */
-  
+
   //Escribir datos en un archivo
-  miArchivo << "Hola mundo"; 
-  
+  miArchivo << "Hola mundo";
+
   //Detectar el final archivo (en un while)
   miArchivo.eof();
-  
+
   //Leer cadenas archivo
   miArchivo >> cadena;
   cout << cadena;
@@ -372,12 +378,12 @@ struct tipoUser {
 int main(void){
   //Asigna variable a la estructura
   struct tipoUser usuario;
-  
+
   //Crea variable archivo
   ofstream db;
   //Abro el archivo en modo binario
   db.open("db.dat", ios::out | ios::binary);
-  
+
   if(!db){
     cout << "No se ha podido crear el fichero";
   } else {
@@ -387,7 +393,7 @@ int main(void){
       cin << usuario.nombre;
       cout << "Escriba su usuario >> ";
       cin << usuario.username;
-      
+
       //Añadimos el nombre al fichero || sizeof() = Indica tamaño
       db.write((char *) &usuario, sizeof(usuario));
     }
@@ -409,7 +415,7 @@ while(db.eof()){
   //Imprimimos resultados
   cout << "Nombre = " << usuario.nombre << endl;
   cout << "Usuario = " << usuario.username << endl;
-  
+
   //Volvemos a leer otro registro
   db.read((char *) $usuario, sizeof(struct tipoUser));
 }
@@ -427,9 +433,9 @@ Esto se consigue reservando memoria y liberandola, ver siguiente ejemplo.
 //Creamos la estructura nodo
 struct nodo{
   int ip; //Definimos datos del nodo
-  
+
   //Definimos un puntero que apunta a el siguiente elemento
-  struct nodo *siguiente; 
+  struct nodo *siguiente;
 }
 
 //Definimos un tipo de dato tipoNodo
@@ -448,44 +454,44 @@ int main(void){
 
   insertarInicio(miNodo, valor);
   insertarFinal(miNodo, valor);
-  
+
   resultado = buscarNodo(miNodo, valor);
 }
 
 void insertarInicio(tipoNodo &miNodo, int valor){
   tipoNodo nd; //Definicion variable tipoNodo
   nd = new(struct nodo); //Asignamos espacio dinamico a la variable nd
-  
+
   //Decimos que el ip es igual a valor, se accede a ip con "->"
-  nd->ip = valor; 
+  nd->ip = valor;
   nd->siguiente = miNodo; //Siguiente = miNodo pasado por parametro
   miNodo = nd; //Hago que miNodo valga el nuevo nodo nd
 }
 
 void insertarFinal(tipoNodo &miNodo, int valor){
   tipoNodo nd1, nd2 = new(struct nodo); //Creo dos variables una dinamica
-  
+
   //Relleno los datos de el nodo
   nd2->ip = valor;
   nd2->siguiente = null; //Para que e¡sea el ultimo
-  
+
   //Si es el unico nodo ponlo el primero
   if(miNodo == NULL) miNodo = nd2;
-  
+
   else
   	nd1 = miNodo;
-  	
+
   	//Mientras el nodo no tenga siguiente se cambia de nodo
   	while(nd1->siguiente != NULL){
   	  //Cambio a el parametro siguiente del siguiente nodo
-      nd1 = nd1->siguiente; 
+      nd1 = nd1->siguiente;
   	}
   	nd1->siguiente = nd2;
 }
 
 tipoNodo buscarNodo(tipoNodo &miNodo, int valor){
   tipoNodo nd = miNodo;
-  
+
   /*
   Mientras el parametro siguiente del nodo no sea null
   se verifica si el apartado ip es igual al valor,
@@ -502,7 +508,7 @@ tipoNodo buscarNodo(tipoNodo &miNodo, int valor){
 ## 14 - POO
 La programacion orientada a objetos (POO) es una tecnica de programacion en la que se programan clases que son como el molde de un objeto y luego este molde se instancia y se crea el objeto. <br>
 Un objeto puede tener atributos (variables), metodos (funciones) y un constructor (funcion que se ejecuta al instanciar la clase) <br>
-Ejemplo de clase: 
+Ejemplo de clase:
 ```c++
 /*
 Declaracion de la clase (molde)
@@ -543,7 +549,7 @@ class radio{
   	void subirVolumen();
   	void bajarVolumen();
   	void cambiarFrecuencia(int valor);
-  	
+
   	radio(); //Contructor
   	~radio(); //Destructor
 }

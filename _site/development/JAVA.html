@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="http://cdn.materialdesignicons.com/1.8.36/css/materialdesignicons.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/estilos.css">
+
+  <title>NoteBooks!</title>
+</head>
+<body>
+  <header>
+    <i class="mdi mdi-menu mdi-24px"></i>
+    <span>NoteBooks!</span>
+  </header>
+
+  <div class="flex-container">
+    <aside>
+      <h1>Notebooks!</h1>
+
+      <hr>
+
+       <!-- NOTE: Por todas las categorias hago un bloque -->
+      
+      <p>Development</p>
+
+      <div>
+         <!-- NOTE: Compruebo la categoria en todos los post -->
+        <a href="/development/JAVA">Java</a>
+         <!-- NOTE: Compruebo la categoria en todos los post -->
+        <a href="/development/GIT">Git & Github</a>
+         <!-- NOTE: Compruebo la categoria en todos los post -->
+        <a href="/development/Cpp">C++</a>
+        
+      </div>
+      
+
+    </aside>
+
+    <main>
+      <h1 id="cuaderno-de-java">CUADERNO DE JAVA</h1>
+<p>Lenguaje de programacion de proposito general completamente orientado a objetos. Tiene dos manera de trabajo con el mismo:</p>
+
+<ul>
+  <li>JSE (Java Standart Edition) incluye el lenguaje de programacion, el runtime y un conjunto de herramientas de desarrollo.</li>
+  <li>JEE (Java Enterprise Edition) biblioteca orientada al desarrollo de aplicaciones empresariales.
+<br /><br /></li>
+</ul>
+
+<p><strong>INDICE</strong><br /></p>
+<ol>
+  <li>Introduccion al lenguaje JAVA<br /></li>
+  <li>POO<br /></li>
+  <li>Acceso a bases de datos (JDBC)<br /></li>
+  <li>Disenio de aplicaciones JAVA (1/2)<br /></li>
+  <li>Interfaces graficas (GUI)<br /></li>
+  <li>Multithreading (hilos)<br /></li>
+  <li>Networking<br /></li>
+  <li>Disenio de aplicaciones JAVA (2/2)<br /></li>
+  <li>Estructuras de datos dinamicas<br /></li>
+  <li>Parametrizacion mediante XML<br /></li>
+  <li>Introspeccion de clases y objetos<br /></li>
+  <li>Generalizaciones y desarrollo de frameworks<br /></li>
+  <li>Entrada/Salida<br /></li>
+  <li>Consideraciones finales<br /></li>
+  <li>ORM y persistencia de datos<br /></li>
+  <li>Inversion de control por inyeccion de dependencias<br /></li>
+  <li>Actualizacion a Java 8<br /></li>
+</ol>
+
+<p><br /></p>
+
+<h2 id="1---introduccion-al-lenguaje-java">1 - Introduccion al lenguaje JAVA</h2>
+<p>Un hola mundo en java se veria de la siguiente manera:</p>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code> <span class="kn">package</span> <span class="n">libro</span><span class="o">.</span><span class="na">cap1</span><span class="o">;</span>
+
+ <span class="kd">public</span> <span class="kd">class</span> <span class="nc">HolaMundo</span><span class="o">{</span>
+	 <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">Main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+		 <span class="n">system</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printIn</span><span class="o">(</span><span class="s">"Hola Mundo!"</span><span class="o">);</span>
+	 <span class="o">}</span>
+ <span class="o">}</span>
+</code></pre>
+</div>
+<p>Ahora vamos a probar a leer datos por teclado.</p>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code> <span class="kn">package</span> <span class="n">libro</span><span class="o">.</span><span class="na">cap1</span><span class="o">;</span>
+
+ <span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span> <span class="c1">//Import clase</span>
+
+ <span class="kd">public</span> <span class="kd">class</span> <span class="nc">HolaMundo</span><span class="o">{</span>
+	 <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">Main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+		<span class="c1">//Esta clase permite leer datos por teclado</span>
+		<span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">"Introduce su nombre &gt;&gt; "</span><span class="o">);</span>
+
+		<span class="c1">//Leemos valor</span>
+		<span class="n">String</span> <span class="n">nombre</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Te llamas: "</span> <span class="o">+</span> <span class="n">nombre</span><span class="o">);</span>
+	 <span class="o">}</span>
+ <span class="o">}</span>
+</code></pre>
+</div>
+<blockquote>
+  <p>Dato: println agrega un salto de linea al final y print normal no</p>
+</blockquote>
+
+<h4 id="declaracion-de-variables">Declaracion de variables</h4>
+<p>Se hace como en C++, se indica el tipo y luego el identificador. Para leer por teclado se usa <code class="highlighter-rouge">scanner.nextInt()</code> se varia int por el tipo de dato y con string se omite. <br /></p>
+<blockquote>
+  <p>Admite datos String y boolean.</p>
+</blockquote>
+
+<h4 id="estructuras-condicionales">Estructuras condicionales</h4>
+<p>En JAVA existen tres tipos de condicionales:</p>
+<ul>
+  <li>Condicional simple: if</li>
+  <li>Condicional compuesto: switch</li>
+  <li>Condicional in-line: <code class="highlighter-rouge">(a&gt;b) ? "Caso verdadero": "Caso falso";</code></li>
+</ul>
+
+<h4 id="estructuras-repetitivas">Estructuras repetitivas</h4>
+<p>Son exactamente las mismas de en C++, while, do-while y for.</p>
+
+<h4 id="definicion-de-contantes">Definicion de contantes</h4>
+<p>Las constantes se definen como metodos de una clase con el modificador “final”.</p>
+<blockquote>
+  <p>Se recomienda definir constantes siempre en mayusculas.</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">package</span> <span class="n">libro</span><span class="o">.</span><span class="na">cap1</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">constantes</span> <span class="o">{</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">String</span> <span class="n">NOMBRE</span> <span class="o">=</span> <span class="s">"Andres"</span><span class="o">;</span> <span class="c1">//Constante</span>
+
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">){</span>
+    <span class="c1">//Codigo</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+<h4 id="arrays">Arrays</h4>
+<p>Los arrays son como en C++, son estaticos, es decir, una vez declarado el numero de elementos este no se puede aumentar y tienen tipo unico.<br />
+Declaracion: <code class="highlighter-rouge">int miArray[] = new int[10];</code> <br />
+Si se conocen los elementos que tiene se puede definir asi: <code class="highlighter-rouge">int miArray[] = {1,2}</code><br /></p>
+<blockquote>
+  <p>miArray.length devuelve el numero de datos de el array</p>
+</blockquote>
+
+<h4 id="matrices">Matrices</h4>
+<p>Son como los arrays bidimensionales de C++, se definen primero las filas y luego las columnas. <br />
+Sintaxis: <code class="highlighter-rouge">int miMatriz [] [] = new int [f] [c];</code></p>
+
+<h4 id="tratamiento-de-strings">Tratamiento de Strings</h4>
+<p>Aqui aprenderemos mas a detalle el manejo de Strings.</p>
+<ul>
+  <li>Acceso a un caracter de la cadena = <code class="highlighter-rouge">String.charAt(int posicion);</code></li>
+  <li>Busca si una cadena contine el caracter desde inicio = <code class="highlighter-rouge">String.indexOf("");</code></li>
+  <li>Busca si una cadena contine el caracter desde fin = <code class="highlighter-rouge">String.lastIndexOf("");</code></li>
+  <li>Obten porciones de una cadena = <code class="highlighter-rouge">String.substring(int inicio, int fin);</code></li>
+  <li>Verificar el inicio de una cadena = <code class="highlighter-rouge">String.startWith("");</code></li>
+  <li>Verificar el final de una cadena = <code class="highlighter-rouge">String.endWith("");</code></li>
+  <li>Concatenar cadenas:
+    <ul>
+      <li>Con el operador +</li>
+      <li>Con StringBuffer. Instancio una variable <code class="highlighter-rouge">StringBuffer sb = new StringBuffer();</code> y aniado datos con <code class="highlighter-rouge">.append()</code> al final se debe pasar el objeto a cadena con <code class="highlighter-rouge">.toString()</code></li>
+    </ul>
+  </li>
+  <li>Conversiones:
+    <ul>
+      <li><code class="highlighter-rouge">Integer.toString(int);</code></li>
+      <li><code class="highlighter-rouge">Integer.parseInt(String);</code></li>
+      <li><code class="highlighter-rouge">Float.toString(float);</code></li>
+      <li><code class="highlighter-rouge">Float.parseFloat(String);</code></li>
+    </ul>
+  </li>
+  <li>Particionar Strings:
+    <ul>
+      <li>Dividir sin expresiones regulares. Devuelve un array. = <code class="highlighter-rouge">String.split("");</code></li>
+      <li>Con expresiones regulares se usa StringTokenizer. Se define la variable <code class="highlighter-rouge">StringTokenizer st = new StringTokenizer(String, "");</code></li>
+    </ul>
+  </li>
+  <li>Comparar cadenas = <code class="highlighter-rouge">String.equals(String);</code></li>
+</ul>
+
+<h4 id="la-maquina-virtual-y-jdk">La maquina virtual y JDK</h4>
+<p>Los programas en JAVA se ejecutan sobre una maquina virtual normalmente llamada JVM (Java Virtual Machine) o JRE (Java Runtime Enviroment). Estos dos permiten ejecutar aplicaciones JAVA. <br /><br /></p>
+
+<p>Si ademas de ejecutarlas como usuario queremos compilarlas y realizar tareas de desarrollo vamos a nacesitar el paquete JDK (Java Development Kit).</p>
+
+<h2 id="2---poo">2 - POO</h2>
+<p>Java es un enguaje fuertemente tipado, esto quiere decir que a todo recurso que se vaya a usar se le tiene que definir un tipo. <br />
+En POO tenemos unos conceptos clave:</p>
+<ul>
+  <li>Objetos = son variables cuyo tipo de dato es una clase</li>
+  <li>Clase = estructura que agrupa datos y la manera de trabajar con ellos</li>
+  <li>Atributos = son la variables dentro de la clase, suelen ser private</li>
+  <li>Metodos = son las funciones que permiten trabajar estos datos</li>
+</ul>
+
+<p>Se recomienda como buena practica de Java definir “getters” y “setters” para los atributos a los que queramos que el usuario tenga acceso.</p>
+
+<h4 id="metodo-tostring">Metodo “toString()”</h4>
+<p>Este es un metodo de Java que se auto invoca al meter una clase en una salida por consola. El metodo se puede sobreescribir gracias a que Java lo soporta. Es util para elegir la manera en que se visualizan los datos.</p>
+
+<h4 id="metodo-equals">Metodo “equals()”</h4>
+<p>Es un metodo que permite elegir la manera en la que se coparan dos elementos de la misma clase.</p>
+
+<h4 id="definicion-y-creacion-de-objetos">Definicion y creacion de objetos</h4>
+<p>Ejemplo de una clase y una definicion de objeto:</p>
+<div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.util.Scanner</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">PC</span><span class="o">{</span>
+  <span class="c1">//Atributos</span>
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">memoriaRAM</span><span class="o">;</span>
+  <span class="kd">private</span> <span class="kt">int</span> <span class="n">memoriaROM</span><span class="o">;</span>
+
+  <span class="c1">//Constructor</span>
+  <span class="kd">public</span> <span class="nf">PC</span><span class="o">(</span><span class="kt">int</span> <span class="n">ram</span><span class="o">,</span> <span class="kt">int</span> <span class="n">rom</span><span class="o">){</span>
+    <span class="n">memoriaRAM</span> <span class="o">=</span> <span class="n">ram</span><span class="o">;</span>
+    <span class="n">memoriaROM</span> <span class="o">=</span> <span class="n">rom</span><span class="o">;</span>
+  <span class="o">}</span>
+
+  <span class="c1">//Getters</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getRAM</span><span class="o">(){</span><span class="k">return</span> <span class="n">memoriaRAM</span><span class="o">;}</span>
+  <span class="kd">public</span> <span class="kt">int</span> <span class="nf">getROM</span><span class="o">(){</span><span class="k">return</span> <span class="n">memoriaROM</span><span class="o">;}</span>
+
+  <span class="c1">//Setters</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setRAM</span><span class="o">(</span><span class="kt">int</span> <span class="n">ram</span><span class="o">){</span><span class="n">memoriaRAM</span> <span class="o">=</span> <span class="n">ram</span><span class="o">;}</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setROM</span><span class="o">(</span><span class="kt">int</span> <span class="n">rom</span><span class="o">){</span><span class="n">memoriaROM</span> <span class="o">=</span> <span class="n">rom</span><span class="o">;}</span>
+
+  <span class="kd">public</span> <span class="n">String</span> <span class="nf">toString</span><span class="o">(){</span>
+  	<span class="k">return</span> <span class="s">"RAM = "</span><span class="o">+</span><span class="n">memoriaRAM</span><span class="o">+</span><span class="s">" ROM = "</span><span class="o">+</span><span class="n">memoriaROM</span><span class="o">;</span>
+  <span class="o">}</span>
+  <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">equals</span><span class="o">(</span><span class="n">Object</span> <span class="n">o</span><span class="o">){</span>
+    <span class="n">PC</span> <span class="n">obj</span> <span class="o">=</span> <span class="o">(</span><span class="n">PC</span><span class="o">)</span><span class="n">o</span><span class="o">;</span> <span class="c1">//Declaro un objeto tipo PC</span>
+    <span class="k">return</span> <span class="o">(</span><span class="n">memoriaRAM</span> <span class="o">&gt;=</span> <span class="n">obj</span><span class="o">.</span><span class="na">memoriaRAM</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">(</span><span class="n">memoriaROM</span> <span class="o">&gt;=</span> <span class="n">obj</span><span class="o">.</span><span class="na">memoriaROM</span><span class="o">);</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre>
+</div>
+
+    </main>
+  </div>
+
+  <script src="/assets/script.js"></script>
+</body>
+</html>

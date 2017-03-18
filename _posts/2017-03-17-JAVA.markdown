@@ -1,3 +1,9 @@
+---
+layout: index
+title: Java
+categories: Development
+---
+
 # CUADERNO DE JAVA
 Lenguaje de programacion de proposito general completamente orientado a objetos. Tiene dos manera de trabajo con el mismo:
 
@@ -27,10 +33,10 @@ Lenguaje de programacion de proposito general completamente orientado a objetos.
 <br>
 
 ## 1 - Introduccion al lenguaje JAVA
-Un hola mundo en java se veria de la siguiente manera: 
+Un hola mundo en java se veria de la siguiente manera:
 ```java
  package libro.cap1;
- 
+
  public class HolaMundo{
 	 public static void Main(String[] args){
 		 system.out.printIn("Hola Mundo!");
@@ -40,15 +46,15 @@ Un hola mundo en java se veria de la siguiente manera:
 Ahora vamos a probar a leer datos por teclado.
 ```java
  package libro.cap1;
- 
+
  import java.util.Scanner; //Import clase
- 
+
  public class HolaMundo{
 	 public static void Main(String[] args){
 		//Esta clase permite leer datos por teclado
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("Introduce su nombre >> ");
-		
+
 		//Leemos valor
 		String nombre = scanner.nextLine();
 		System.out.println("Te llamas: " + nombre);
@@ -78,9 +84,9 @@ Las constantes se definen como metodos de una clase con el modificador "final".
 package libro.cap1;
 
 public class constantes {
-  
+
   public static final String NOMBRE = "Andres"; //Constante
-  
+
   public static void main(String[] args){
     //Codigo
   }
@@ -130,7 +136,7 @@ En POO tenemos unos conceptos clave:
 * Atributos = son la variables dentro de la clase, suelen ser private
 * Metodos = son las funciones que permiten trabajar estos datos
 
-Se recomienda como buena practica de Java definir "getters" y "setters" para los atributos a los que queramos que el usuario tenga acceso. 
+Se recomienda como buena practica de Java definir "getters" y "setters" para los atributos a los que queramos que el usuario tenga acceso.
 
 #### Metodo "toString()"
 Este es un metodo de Java que se auto invoca al meter una clase en una salida por consola. El metodo se puede sobreescribir gracias a que Java lo soporta. Es util para elegir la manera en que se visualizan los datos.
@@ -147,21 +153,21 @@ public class PC{
   //Atributos
   private int memoriaRAM;
   private int memoriaROM;
-  
+
   //Constructor
   public PC(int ram, int rom){
     memoriaRAM = ram;
     memoriaROM = rom;
   }
-  
+
   //Getters
   public int getRAM(){return memoriaRAM;}
   public int getROM(){return memoriaROM;}
-  
+
   //Setters
   public void setRAM(int ram){memoriaRAM = ram;}
   public void setROM(int rom){memoriaROM = rom;}
-  
+
   public String toString(){
   	return "RAM = "+memoriaRAM+" ROM = "+memoriaROM;
   }
