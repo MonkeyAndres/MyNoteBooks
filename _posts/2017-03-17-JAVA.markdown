@@ -177,3 +177,113 @@ public class PC{
   }
 }
 ```
+> Java tiene soporte para sobrecarga, es decir se pueden definir varios metodos de mismo nombre pero variando argumentos.
+> Los atributos o metodos "static" son comunes a todas las instancias de la clase
+
+#### Encapsulamiento
+Los metodos y atributos en Java pueden ser de cuatro tipos:
+* Se pueden ver dentro de clases heredadas y fuera de clase = `public`
+* Esta encapsulado y solo se tiene acceso mediante esa clase = `privado`
+* Solo visible por la cadena de herencia = `protected`
+* Visible para las clases del mismo paquete = `friendly`
+> El tipo friendly no se define, simplemente al no tener ninguno de los anteriores se declara como friendly
+
+#### Packages
+Los paquetes en Java son una manera de organizar las clases de Java, esto se hace mediante carpetas. <br>
+Ejemplo el paquete "java.cap2.fecha" esta hubicado en una carpeta llamada "cap2" y luego la carpeta ''fecha''.
+
+#### APIs
+Es el conjunto de paquetes (clases y metodos) que tenemos disponibles para crear una aplicacion, estos paquetes se compilan en el formato ".jar"
+
+#### JavaDoc
+Es una utilidad incluida en eclipse que permite documentar un proyecto en java generando de manera automatica archivos HTML. Investigar mas adelante.
+
+#### Incluir clases de otros paquetes
+Para esto hacemos uno del comando `import` mas la ruta hacia el paquete donde se encuentra la clase que queremos importar.
+
+#### Herencia
+En java todas las clases heredan de la clase padre Object pero aparte de esto podemos definir clases padre e hijo de la siguiente forma:
+```java
+public class ClaseHijo extends ClasePadre{
+  //Codigo de la clase hijo
+  
+  public ClaseHijo(String a){ //Argumentos que necesita contruct padre
+    super(a); //Pasamos los argumentos al constructor padre
+  }
+}
+```
+> Java no tiene herencia multiple
+
+En la herencia en Java existen dos palabras importantes:
+* **super** = hace referencia a la clase padre, es decir, `super.saluda()` invoca el metodo saluda de la clase padre.
+* **this** = hace referencia otros metodos y atributos de la misma clase.
+
+#### Polimorfismo
+
+
+#### Clase abstracta
+Son clases con metodos que no pueden ser definidos por falta de informacion. Es algo asi como crear un esqueleto de atributos y metodos pero sin definirlos.
+```java
+public abstract class FigurasGeometricas(){
+  public abstract double area(); //No se define
+  
+  public String toString(){
+    return "El area es = "+area(); //Esto es posible
+  }
+}
+
+// -Otro Archivo-
+
+public class Rectangulo extends FigurasGeometricas(){
+  private int base;
+  private int altura;
+  
+  public Rectangulo (int b, int h){
+    this.base = b;
+    this.altura = h;
+  }
+  
+  //Defino aqui el metodo abstracto
+  public double area(){
+    return base * altura;
+  }
+}
+```
+Las clases abstractas necesitan ser heredadas por otras para ser instanciadas, es decir, no puedo instanciar la clase "FigurasGeometricas" pero si puedo instanciar la clase "Rectangulo".
+
+#### El metodo "finalize"
+Es identico al destructor de clases que tiene C++
+```java
+public void finalize(){
+  //Codigo
+}
+```
+#### Clases Utilitarias
+Tipo de clases con metodos estaticos. <br>
+Los metodos estaticos son todos aquellos que se pueden invocar sin la necesidad de crear un objeto de la clase.
+```java
+public class Operaciones(){
+  public static int suma(int a, int b){
+    return a + b;
+  }
+}
+
+Operaciones.suma(4,9);
+```
+#### Clases genericas
+Son clases que agrupan objetos y se les puede definir un tipo segun el tipo de objeto que manejan.
+```java
+//Ejemplo tenermos una clase que agrupa elementos
+public class miColeccion<T>{
+  //Codigo
+}
+
+//Instancio la clase
+miColeccion<String> coleccionCadenas = new miColeccion<String>
+```
+Las clases genericas se usan con dos estructuras de datos:
+* **PIlas**: agrupan elementos uno sobre otro y el ultimo es el que se obtiene al desapilar.
+* **Colas**: se agrupan uno al final de otro y al eliminar se quitan elementos del principio.
+
+> Tienes que desarrollarlos, no existe un estandar.
+
