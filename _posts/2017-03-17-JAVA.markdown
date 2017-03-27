@@ -129,7 +129,8 @@ Los programas en JAVA se ejecutan sobre una maquina virtual normalmente llamada 
 Si ademas de ejecutarlas como usuario queremos compilarlas y realizar tareas de desarrollo vamos a nacesitar el paquete JDK (Java Development Kit).
 
 ## 2 - POO
-Java es un enguaje fuertemente tipado, esto quiere decir que a todo recurso que se vaya a usar se le tiene que definir un tipo. <br>
+Java es un lenguaje fuertemente tipado, esto quiere decir que a todo recurso que se vaya a usar se le tiene que definir un tipo. <br>
+
 En POO tenemos unos conceptos clave:
 * Objetos = son variables cuyo tipo de dato es una clase
 * Clase = estructura que agrupa datos y la manera de trabajar con ellos
@@ -219,7 +220,7 @@ En la herencia en Java existen dos palabras importantes:
 * **this** = hace referencia otros metodos y atributos de la misma clase.
 
 #### Polimorfismo
-
+Pendiente de investigacion.
 
 #### Clase abstracta
 Son clases con metodos que no pueden ser definidos por falta de informacion. Es algo asi como crear un esqueleto de atributos y metodos pero sin definirlos.
@@ -271,10 +272,10 @@ public class Operaciones(){
 Operaciones.suma(4,9);
 ```
 #### Clases genericas
-Son clases que agrupan objetos y se les puede definir un tipo segun el tipo de objeto que manejan.
+Son clases que agrupan objetos y se les puede definir el tipo de objeto con el que van a trabajar. Esto se puede usar en parametros de argumentos y en tipos de metodos.
 ```java
 //Ejemplo tenermos una clase que agrupa elementos
-public class miColeccion<T>{
+public class miColeccion<T>{ 
   //Codigo
 }
 
@@ -287,3 +288,143 @@ Las clases genericas se usan con dos estructuras de datos:
 
 > Tienes que desarrollarlos, no existe un estandar.
 
+#### Interfaces
+Son una especie de clases que sirven para implementar en otras clases. Son la solucion ante la falta de herencia multiple en java.
+```java
+public interface Idioma{
+  public void saludo();
+}
+
+public class Ingles implements Idioma{
+  public void saludo(){
+    System.out.println("Hello! :D");
+  }
+}
+```
+
+> El programa anterior define que todos los idiomas tienen una manera de saludar pero no la define, mas tarde el idioma ingles IMPLEMENTA esta interface y define como se saluda en ingles.
+
+#### Metodo COMPARABLE
+Para entender este metodo y las interfaces vamos a hacer un sistema que ordene alumnos por su nombre.
+
+```java
+/*
+Interfaz Comparable
+Este programa define una interfaz generica que tiene un metodo no definido que compara dos objetos tipo T.
+*/
+public interface Comparable<T>{
+  public int compareTo(T objeto);
+}
+```
+```java
+/*
+Clase Alumno
+Esta clase implementa la interfaz Comparable y define el tipo de objeto a tratar. Despues sobreescribe el metodo "compareTo" y hace que devuelva 1 si el primer elemento resulta ganador y dos en caso de que sea al reves.
+*/
+public class Alumno implements Comparable<Alumno> {
+  public String nombre;
+  private int notaMedia;
+
+  public Alumno(String n, int nm){
+    this.nombre = n;
+    this.notaMedia = nm;
+  }
+
+  public String getNombre(){
+    return this.nombre;
+  }
+
+  public int compareTo(Alumno objeto){
+    if(this.nombre.charAt(0) <= objeto.getNombre().charAt(0)){
+      return 1;
+    } else {
+      return 2;
+    }
+  }
+}
+```
+
+```java
+/*
+Clase Util
+Esta clase contiene el metodo estatico ordenar, este mediante el algoritmo de burbuja permite ordenar un array de objetos con la interface Comparable.
+*/
+public class Util {
+	public static void ordenar (Comparable arr[]){
+		boolean ordenado = false; 
+		while(!ordenado){
+			ordenado = true;
+			for(int i = 0; i<arr.length-1; i++){
+				if (arr[i+1].compareTo(arr[i]) == 1) {
+					Comparable aux = arr[i];
+					arr[i] = arr[i+1];
+					arr[i+1] = aux;
+					ordenado = false;
+				}
+			}
+		}
+	}
+}
+```
+> Este algoritmo compara pares de elementos y los intercambia poco a poco. (Buscar en google "algoritmo de la burbuja para un mejor entendimiento")
+
+```java
+/*
+Clase Main
+Crea un array de 3 alumnos y ordena sus nombres
+*/
+public class Main {
+	public static void main(String[] args){
+		Alumno arr[] = {
+			new Alumno("Juan", 7),
+			new Alumno("Pedro", 3),
+			new Alumno("Andres", 7),
+		};
+		
+		Util.ordenar(arr);
+		for(int i = 0; i < arr.length; i++){
+			System.out.println(arr[i].getNombre());
+		}
+	}
+}
+```
+
+#### Colecciones
+Llamamos coleccion a un grupo de datos determinado, por ejemplo un String[ ] es un grupo de String. <br>
+Para agrupar elementos Java provee la interface Collection. Las clases ArrayList y Vector implementan esta interface.
+
+```java
+import java.Util.Vector;
+
+public class TestVector{
+  public static void main(String[] args){
+    Vector<String> VNombres = new Vector<String>();
+    
+    VNombres.add("Andres");
+    VNombres.add("Pedro");
+    VNombres.add("Maria");
+    
+    String aux;
+    
+    for(int i = 0; i<VNombres.size(); i++){
+      aux = VNombres.get(i);
+      System.out.println(aux);
+    }
+  }
+}
+```
+> No hay que confundir un Array con un Vector, el Array esta definido por defecto por el lenguaje de programacion pero el Vector es algo programable.
+
+#### Excepciones
+Es la manera de manejar los fallos que ocurren mientras la ejecucion del programa.
+```java
+try{
+  //Codigo que puede dar un error
+} catch (/*Excepcion especifica sino "Exception e"*/){
+  //Codigo si ocurre este error
+} catch (){
+  //Codigo para otro error.
+} finally{
+  //Codigo que se ejecuta al final independientente de si falla.
+}
+```
