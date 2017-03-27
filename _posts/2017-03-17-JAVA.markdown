@@ -310,7 +310,8 @@ Para entender este metodo y las interfaces vamos a hacer un sistema que ordene a
 ```java
 /*
 Interfaz Comparable
-Este programa define una interfaz generica que tiene un metodo no definido que compara dos objetos tipo T.
+Este programa define una interfaz generica que tiene un metodo no
+definido que compara dos objetos tipo T.
 */
 public interface Comparable<T>{
   public int compareTo(T objeto);
@@ -319,7 +320,10 @@ public interface Comparable<T>{
 ```java
 /*
 Clase Alumno
-Esta clase implementa la interfaz Comparable y define el tipo de objeto a tratar. Despues sobreescribe el metodo "compareTo" y hace que devuelva 1 si el primer elemento resulta ganador y dos en caso de que sea al reves.
+Esta clase implementa la interfaz Comparable y define el tipo de 
+objeto a tratar. Despues sobreescribe el metodo "compareTo" y hace 
+que devuelva 1 si el primer elemento resulta ganador y dos en caso 
+de que sea al reves.
 */
 public class Alumno implements Comparable<Alumno> {
   public String nombre;
@@ -347,7 +351,9 @@ public class Alumno implements Comparable<Alumno> {
 ```java
 /*
 Clase Util
-Esta clase contiene el metodo estatico ordenar, este mediante el algoritmo de burbuja permite ordenar un array de objetos con la interface Comparable.
+Esta clase contiene el metodo estatico ordenar, este mediante el
+algoritmo de burbuja permite ordenar un array de objetos con la 
+interface Comparable.
 */
 public class Util {
 	public static void ordenar (Comparable arr[]){
