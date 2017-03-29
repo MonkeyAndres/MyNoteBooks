@@ -434,3 +434,156 @@ try{
   //Codigo que se ejecuta al final independientente de si falla.
 }
 ```
+
+## 3 - Acceso a bases de datos (JDBC)
+En este capitulo se vera conceptos basicos sobre bases de datos relacionales y SQL .
+
+#### Conceptos basicos SQL
+Las bases de datos se componen de tablas y cada tabla tiene unos campos definidos. <br>
+Ejemplo: nombre ( VARCHAR(15), NOT NULL ) <br><br>
+
+En las tablas puede darse el caso de que un campo este relacionado con otro campo de otra tabla. A esto se le llama relacion foranea. <br><br>
+
+Para acceder a los datos entro de una BBDD se necesitas unas determinadas instrucciones:
+* Query = `SELECT * FROM usuarios`
+* Join = 
+```sql
+SELECT u.user, u.pass, t.ntrabajo 
+FROM users u, trabajos t 
+WHERE u.trabajo = t.ntrabajo
+```
+* Insert = `INSERT INTO users (nombre, pass) VALUES ("Andres", 1235)`
+* Update = `UPDATE users SET nombre = "Pedro" WHERE nombre = "Andres"`
+* Delete = `DELETE FROM users WHERE nombre = "Andres"`
+
+#### JDBC
+Java ofrece la posibilidad de conectarse con cualquier base de datos (hace falta un driver para java). Esto facilita el cambio entre bases de datos ya que el codigo Java dedicado a DBs sera rehusable en un 90%. <br>
+Esta portabilidad es posible gracias a que todas las clases de acceso a DB implementan la misma interface.
+```java
+/*
+* Ejemplo de conexion a DB
+*/
+
+import java.sql.DriverManager;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+public class TestDB (){
+  public static void main (String[] args){
+    //Variables de conexion
+    String usr = "root";
+    String pswd = "";
+    String driver = "org.hsqldb.jdbcDriver";
+    String url = "jdbc:hsqldb:hsql://localhost/xdb";
+    
+    Connection conexion = null;
+    PreparedStatement ps = null;
+    ResultSet rs = null;
+    
+    try{
+      Class.forName(driver); //Extraigo el driver
+      conexion = DriverManager.getConnection(url, usr, pswd);
+      
+      //Defino el query
+      String consulta = "SELECT id, username, password, sexo ";
+      consulta += "FROM usuarios";
+      
+      //Preparo el query
+      ps = conexion.prepareStatement(sql);
+      
+      //Realizo la consulta
+      rs = ps.executeQuery();
+      
+      //Muestro los resultados
+      while (rs.next()){
+        System.out.println(rs.getInt("id"));
+        System.out.println(rs.getString("username"));
+        System.out.println(rs.getString("password"));
+        System.out.println(rs.getString("sexo"));
+      }
+    }
+    catch(Exception ex){
+      ex.printStackTrace();
+      throw new RuntimeException(ex);
+    }
+    finally{
+      try{
+        //Cierro recursos en orden inverso a su invocacion
+        if(rs != null) rs.close();
+        if(ps != null) ps.close();
+        if(conexion != null) conexion.close();
+      }
+      catch(Exception ex){
+        ex.printStackTrace();
+        throw new RuntimeException(ex);
+      }
+    }
+  }
+}
+```
+Para hacer inserts en JDBC se puede optar por definir los values con ? y luego mas tarde definirlos. (Parametrizacion)
+```java
+String sql;
+sql += "INSERT INTO usuarios (id, username, password, sexo)";
+sql += "VALUES(?,?,?,?)";
+
+ps = conexion.prepareStatement(sql);
+
+if(true){
+  ps.setInt(1, 25);
+  ps.setString(2, "Manolo");
+  ps.setString(3, "1111");
+  ps.setString(4, "Asexual");
+}
+
+/*
+* executeUpdate() and executeQuery()
+* Se pone update porque cambia algo de la tabla
+*/
+int affectedRows = ps.executeUpdate();
+```
+> El valor de "affectedRows" sera el numero de filas que se ven afectadas por el cambio, en este caso es una, haciendo un if podemos ver si se ha hecho todo bien o no.
+
+#### Patron de disenio: Singleton
+Un patron de disenio sugiere una solucion eficiente para resolver un problema. El problema que tenemos en este caso es:
+* No poder mantener una estancia de clase (no mantener la conexion)
+```java
+/*
+* Patron de disenio Singleton
+* Esta solucion consiste en crear una constante de clase "conexion"
+* y un metodo estatico que compruebe su valor y en caso de nulo
+* lo defina.
+*/
+
+public class UConnection{
+  private static Connection conexion;
+  
+  public static Connection obtenerConexion(){
+    if(conexion == null){
+      conexion = DriverManager.getConnection(url, usr, pswd);
+    }
+    return conexion;
+  }
+}
+```
+
+#### InnerClasses
+Work in Progress
+
+#### Manejo de transacciones
+Podemos hacer que la manera de realizar consultas o actualizaciones en la base de datos se asemeje a la manera en que trabaja git. <br>
+Esto lo conseguiremos definiendo `conexion.setAutoCommit(false)` tras ejecutarlo dejara de commitear las cosas automaticamente. El mayor uso de esto es con "affectedRows" para que tras comprobar a cuantas filas afecta se de el visto bueno con la instruccion `conexion.commit()` en caso de que afectara a mas o menos filas se puede usar `conexion.rollback()` para cancelar.
+
+#### Acceso a MetaDatos y BatchUpdates
+Me lo salto, no lo veo util. (Pag 138 - 139) (Pag 141 - 142)
+
+#### QueryFetchSize
+Es una manera de traer muchos datos de la base de datos de golpe y almacenarlos en memoria local para reducir consumo de red. <br>
+```java
+int n = 100;
+pr.setFetchSize(n);
+```
+> En la primera consulta rs.next() traera "n" resultados y en las demas va de uno en uno desde memoria local.
+
+## Disenio de aplicaciones JAVA (1/2)
