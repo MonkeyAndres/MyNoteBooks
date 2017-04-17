@@ -11,8 +11,6 @@ Repository with all my notebooks :P
   * [C & C++](#cpp)
   * [Java 8 (WIP)](#java)
 
-<br>
-
 ### Git
 
 1. Introduction to Git and GitHub
