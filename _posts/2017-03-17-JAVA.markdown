@@ -586,7 +586,7 @@ pr.setFetchSize(n);
 ```
 > En la primera consulta rs.next() traera "n" resultados y en las demas va de uno en uno desde memoria local.
 
-## Disenio de aplicaciones JAVA (1/2)
+## 4 - Disenio de aplicaciones JAVA (1/2)
 En el arte del disenio de las aplicaciones tienes que crear productos que sean:
 * Mantenibilidad: es la capacidad de adaptarla a otras variantes
 * Escalabilidad: es si tu aplicacion esta hecha de manera que permite ampliarla.

@@ -1,0 +1,149 @@
+# PYTHON
+
+Lenguaje de tipado dinamico. Los booleanos tienen la primera letra mayuscula. Existen else if => elif.
+> list() convierte un objeto a lista
+> tuple() covierte un objeto a tupla
+
+Los decoradores son funciones que reciben una funcion por argumentos y ejecutan codigo al principio y fin de esta.
+
+```python
+result = n1 / n2 # Esto regresa un numero flotante
+result = n1 // n2 # Esto regresa un numero entero
+
+print(myStr[::-1]) # Imprime la cadena al reves
+
+# Strings
+str.lower()
+str.upper()
+str.title() # Primera mayuscula de cada palabra
+str.find("Hola")# Regresa -1 si no esta (case sensitive)
+str.count("C") # Cuenta cuantas veces esta lo idicado (case sensitive)
+str.replace('c', 'x') # Cambia uno por otro
+str.split("") # Como siempre
+
+# Listas o Arrays
+arr.append()
+arr.insert(posicion, valor)
+arr.pop() # Devuelve ultimo item y lo elimina
+arr.remove(valor)
+
+len(lista) # Retorna el tamanio de lista
+
+# Tuplas: listas sin update
+tpl = (1, "Patata", True)
+tpl[0]
+
+# Diccionarios
+dic = {'nombre': "Andres", 'edad': 15} # Crea diccionario
+dic['casado'] = False # Crea clave o actualiza si no existe
+del dic['edad']
+
+llaves = tuple(dic.keys()) # Retorna todas las claves que hay
+valores = tuple(dic.values()) # Retorna todas los valores
+
+dic.update(otroDiccionario) # Une dos diccionarios
+
+# FOR
+for element in elements:
+	pass
+
+for i in range(0,10): # El 10 no se incluye
+	pass
+
+for i in reversed(elements): # Bucle for al reves
+	pass
+# Retornos multiples
+def persona():
+	return "Andres", 15, True
+	
+nombre, edad, casado = persona()
+
+# Asignar funciones a variables
+miPersona = persona
+miPersona(args)
+
+# Crear variables globales dentro de una funcion
+def varGlobal():
+	global miVar
+	miVar = "Patata"
+print(miVar)
+
+# Editar variables globales
+miVar = "Verdura"
+def comidaVerdad():
+	global miVar
+	miVar = "Patata"
+	
+# Tipo de dato
+type(miVar)
+
+# Argumentos ilimitados
+def suma(*numeros): # Se suele usar *args
+	resultado = 0
+	for n in numeros:
+		resultado += n
+	return resultado
+	
+# Argumento diccionario
+def savePersona(**persona):
+	nombre = persona.get('nombre')
+	
+savePersona(dic)
+
+# Lambda: pequenias funciones in-line
+pregunta = lambda str: '{}?'.format(str)
+r = pregunta("Como te llamas") # Pone una interrogacion al final
+print(r)
+
+# Decorador:
+def decorador(function):
+	def finalFunction(*args, **kwargs):
+		print("Antes funcion")
+		function(*args, **kwargs)
+		print("Despues funcion")
+	return finalFunction
+	
+@decorador
+def saludo():
+	print("Hola Mundo")
+	
+# Si quieres retornar 1 valor mas de 1 vez: usa yield, no return
+
+# Documentacion en Python
+def saludo():
+	""" Funcion que imprime Hola MUNDO """
+	print("Hola Mundo")
+	
+# Comprobar el script principal
+if __name__ == "__main__":
+	print("Eres el principal")
+	
+# Random
+random.randint(0, 10)
+random.choice(list)
+random.shuffle(list)
+
+# Investigar paquetes: OS, sys, datetime
+
+# Excepciones
+try:
+	print(2/0)
+except ZeroDivisionError as ex:
+	print(ex)
+	print("No se puede dividir entre 0")
+finally:
+	pass
+```
+
+## POO
+En python todos los metodos deben recibir el paremetro `self`. Para crear metodos o atributos privados se pone doble barra baja delante `self.__password`
+```python
+class Usuario:
+	def __init__(self, n, p): # Constructor
+		self.nombre = n
+		self.passwd = p
+```
+
+## CheatSheet
+
+![cheatSheet](https://i.kinja-img.com/gawker-media/image/upload/x8vc1hbyzzwhxdq7qaxe.png)
