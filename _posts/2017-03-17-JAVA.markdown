@@ -16,7 +16,7 @@ Lenguaje de programacion de proposito general completamente orientado a objetos.
 2. POO<br>
 3. Acceso a bases de datos (JDBC)<br>
 4. Disenio de aplicaciones JAVA (1/2)<br>
-5. Interfaces graficas (GUI)<br>
+5. Interfaces graficas (JavaFX)<br>
 6. Multithreading (hilos)<br>
 7. Networking<br>
 8. Disenio de aplicaciones JAVA (2/2)<br>
@@ -608,3 +608,15 @@ Al hacer una aplicacion hay que distinguir bien entre dos partes: la logica de n
 
 #### Portabilidad entre DBs
 Aunque JDBC provee de un sistema universal de consutas hay algunas instrucciones que no reconocen ciertas DBs, esto se puede solucionar creando DAOs abstractos y definiendo subclases `nombreTablaDAOmiDB` que definan estos metodos abstractos.
+
+
+# 5 - Interfaces graficas (JavaFX)
+La GUI en Java se desarrolla con JavaFX. Un programa con GUI se compone de 3 partes:
+* El archivo FXML: es como la estructura y el estilo de la app (como el html y css)
+* El controlador de FXML: por cada archivo FXML debe haber un controlador que maneje los eventos de la vista
+* Resto de la aplicacion (Backend)
+
+Para ver ejemplos de proyectos en JavaFX:
+* [HelloFXML](https://github.com/MonkeyAndres/HelloFXML)
+* [HelloJava-Inventario](https://github.com/MonkeyAndres/HelloJava-Inventario)
+
