@@ -7,25 +7,7 @@ categories: Development
 # CUADERNO DE C y C++
 Lenguaje multiplataforma, compilado y de propósito general, lo usaría para hacer API potentes de consola porque apps con interfaz prefiero Java + FX <br><br>
 
-**Índice** <br>
-1. Entornos de desarrollo <br>
-2. Hola mundo <br>
-3. Variables y constantes <br>
-4. Operadores <br>
-5. Punteros y referencias <br>
-6. Entrada y salida estándar <br>
-7. Control del flujo <br>
-8. Arrays <br>
-9. Cadenas <br>
-10. Estructuras <br>
-11. Funciones <br>
-12. Ficheros en C y C++ <br>
-13. Estructuras dinámicas <br>
-14. POO <br>
-15. Técnicas de programación <br>
-16. Frameworks <br>
-
-<br>
+[TOC]
 
 ## 1 - Entornos de desarrollo
 A día de hoy uso el entorno CodeBlocks aunque probablemente me cambie a otro más bonito en apariencia por ejemplo SublimeText o Atom.
