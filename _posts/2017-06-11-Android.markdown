@@ -1,0 +1,20 @@
+---
+layout: index
+title: Android
+categories: Development
+---
+
+# Android
+
+Para desarrollar en java hace falta entender conceptos basicos de java:
+
+* Variables
+* Arrays
+* Matrices
+* Operadores de comparacion
+* Sentencias de control (if-else y bucles)
+* Objetos (concepto teorico) y Herencia de objetos
+
+Los proyectos en Android se desarrollan en Android Studio, busca el modo de instalar esto en tu OS.
+
+La programacion para Android se basa en Activities que son como las diferentes pantallas de una aplicacion. Estas Activities tienen un cliclo de vida que ahora veremos.

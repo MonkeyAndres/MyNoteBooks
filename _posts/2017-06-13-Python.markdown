@@ -1,0 +1,11 @@
+---
+layout: index
+title: Python
+categories: Development
+---
+
+# Python
+
+Python es un lenguaje de programacion open source, muy legible y facil de aprender. Entre sus principales usos esta el uso como lenguaje de scripting y para hacer el backend de paginas web con frameworks como Django.
+
+Programar es una manera de manejar datos. 
